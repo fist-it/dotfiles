@@ -42,6 +42,7 @@ packer.startup(function()
     'rose-pine/neovim',
     as = 'rose-pine',
   })
+  use 'norcalli/nvim-colorizer.lua'
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -102,4 +103,5 @@ vim.cmd [[
   colorscheme rose-pine
   let g:rose_pine_variant = 'dawn'
   ]]
+
 

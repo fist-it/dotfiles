@@ -43,7 +43,6 @@
     azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
     vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
     per_directory_history   # Oh My Zsh per-directory-history local/global indicator
-    time                    # current time
     # =========================[ Line #2 ]=========================
     ram
   )

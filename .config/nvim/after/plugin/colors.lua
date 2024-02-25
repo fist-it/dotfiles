@@ -7,3 +7,5 @@ function colors()
 end
 
 colors()
+
+require'colorizer'.setup()

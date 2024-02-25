@@ -150,6 +150,11 @@ _G.packer_plugins = {
     path = "/Users/fist_it/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/Users/fist_it/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/fist_it/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -159,6 +164,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/fist_it/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/Users/fist_it/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -214,11 +224,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/fist_it/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight",
     url = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight"
-  },
-  ["vim-slint"] = {
-    loaded = true,
-    path = "/Users/fist_it/.local/share/nvim/site/pack/packer/start/vim-slint",
-    url = "https://github.com/slint-ui/vim-slint"
   }
 }
 
