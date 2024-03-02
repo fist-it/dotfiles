@@ -44,7 +44,7 @@
     vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
     per_directory_history   # Oh My Zsh per-directory-history local/global indicator
     # =========================[ Line #2 ]=========================
-    ram
+    #ram
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
