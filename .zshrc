@@ -22,7 +22,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -110,12 +109,17 @@ alias duck="du -sh *"
 alias tmx="tmux source-file ~/.tmux.conf"
 
 # fast dirs
-alias code="cd /Users/fist_it/Documents/code-personal"
-alias projects="cd /Users/fist_it/Documents/projects"
-alias pg="cd /Users/fist_it/Documents/pg_eti/semestr_2/"
-alias dot="cd /Users/fist_it/.dotfiles/" #airline themes config: /Users/fist_it/.local/share/nvim/plugged/vim-airline-themes/autoload/airline/themes
+if [[ $(uname) == Darwin ]]; then
+  alias projects="cd /Users/fist_it/Documents/projects"
+  alias pg="cd /Users/fist_it/Documents/pg_eti/semestr_2/"
+  alias dot="cd /Users/fist_it/.dotfiles/"
+fi
 
-
+if [[ $(uname) == Linux ]]; then 
+  alias projects="cd /home/fist/projects"
+  alias pg="cd /home/fist/pg_eti/semestr_2/"
+  alias dot="cd /home/fist/.dotfiles/"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
