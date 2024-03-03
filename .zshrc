@@ -73,7 +73,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux)
+plugins=(tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,6 +107,7 @@ alias la="ls -a"
 alias cl="clear"
 alias duck="du -sh *"
 alias tmx="tmux source-file ~/.tmux.conf"
+eval "$(zoxide init zsh)"
 
 # fast dirs
 if [[ $(uname) == Darwin ]]; then
@@ -115,7 +116,7 @@ if [[ $(uname) == Darwin ]]; then
   alias dot="cd /Users/fist_it/.dotfiles/"
 fi
 
-if [[ $(uname) == Linux ]]; then 
+if [[ $(uname) == Linux ]]; then
   alias projects="cd /home/fist/projects"
   alias pg="cd /home/fist/pg_eti/semestr_2/"
   alias dot="cd /home/fist/.dotfiles/"
@@ -134,6 +135,10 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --prompt="∮" --marker=">" --pointer="◆" --separator="─"
   --scrollbar="│" --info="right"'
 
+
+if [ -x "$(command -v zoxide)" ]; then
+  echo 'zoxide installed!'
+fi
 
 
 export PATH=$PATH:/Users/fist_it/.spicetify

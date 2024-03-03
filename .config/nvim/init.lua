@@ -22,7 +22,6 @@ packer.startup(function()
   use 'wbthomason/packer.nvim'
 
   -- functionality
-  use 'github/copilot.vim'
   use 'preservim/nerdtree'
   use 'Xuyuanp/nerdtree-git-plugin'
   use 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -73,12 +72,7 @@ packer.startup(function()
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use 'andweeb/presence.nvim'
 end)
-
-
--- external config
-require('discord');
 
 
 -- inline configuration
