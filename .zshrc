@@ -73,7 +73,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,17 +110,9 @@ alias tmx="tmux source-file ~/.tmux.conf"
 eval "$(zoxide init zsh)"
 
 # fast dirs
-if [[ $(uname) == Darwin ]]; then
-  alias projects="cd /Users/fist_it/Documents/projects"
-  alias pg="cd /Users/fist_it/Documents/pg_eti/semestr_2/"
-  alias dot="cd /Users/fist_it/.dotfiles/"
-fi
-
-if [[ $(uname) == Linux ]]; then
-  alias projects="cd /home/fist/projects"
-  alias pg="cd /home/fist/pg_eti/semestr_2/"
-  alias dot="cd /home/fist/.dotfiles/"
-fi
+alias projects="cd ~/Documents/projects"
+alias pg="cd ~/Documents/pg_eti/semestr_2/"
+alias dot="cd ~/.dotfiles/"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -134,11 +126,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --border="rounded" --border-label="fist" --border-label-pos="0" --preview-window="border-rounded"
   --prompt="∮" --marker=">" --pointer="◆" --separator="─"
   --scrollbar="│" --info="right"'
-
-
-if [ -x "$(command -v zoxide)" ]; then
-  echo 'zoxide installed!'
-fi
 
 
 export PATH=$PATH:/Users/fist_it/.spicetify
