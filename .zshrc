@@ -106,17 +106,15 @@ alias reload="source ~/.zshrc"
 alias la="ls -a"
 alias cl="clear"
 alias duck="du -sh *"
-alias tmx="tmux source-file ~/.tmux.conf"
-eval "$(zoxide init zsh)"
+
+eval "$(zoxide init zsh --cmd cd)"
 
 # fast dirs
 alias projects="cd ~/Documents/projects"
 alias pg="cd ~/Documents/pg_eti/semestr_2/"
 alias dot="cd ~/.dotfiles/"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+source ~/.p10k.zsh
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:#262626
@@ -130,3 +128,12 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 
 export PATH=$PATH:/Users/fist_it/.spicetify
 alias cr="cargo run"
+
+
+# tmux
+alias tmx="tmux source-file ~/.tmux.conf"
+if tmux has-session 2>/dev/null; then
+else
+  tmux new-session -d -s main
+fi
+

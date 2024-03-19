@@ -47,36 +47,40 @@ packer.startup(function()
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',
     requires = {
-    -- LSP Support
-      {'neovim/nvim-lspconfig'},
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' },
+      { 'williamboman/mason.nvim' },
+      { 'williamboman/mason-lspconfig.nvim' },
 
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'saadparwaiz1/cmp_luasnip'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'hrsh7th/cmp-nvim-lua'},
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-nvim-lua' },
 
       -- Snippets
-      {'L3MON4D3/LuaSnip'},
-      {'rafamadriz/friendly-snippets'},
+      { 'L3MON4D3/LuaSnip' },
+      { 'rafamadriz/friendly-snippets' },
     }
-  } -- rust application use 'neovim/nvim-lspconfig' use 'slint-ui/vim-slint'
+  }
   use 'simrat39/rust-tools.nvim'
 
+  -- Debugging
+  use 'mfussenegger/nvim-dap'
+
+
   -- 3rd party
-   use {
+  use {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
 end)
 
 
 -- inline configuration
-vim.cmd[[
+vim.cmd [[
   set updatetime=100
   set number relativenumber
   set tw=80
@@ -84,7 +88,11 @@ vim.cmd[[
   set expandtab
   set tabstop=2
   set softtabstop=2
+  set foldmethod=marker
 ]]
+
+vim.g.rust_recommended_style = 0;
+
 
 -- Airline configuration
 vim.g.airline_theme = 'minimalist'
@@ -97,5 +105,3 @@ vim.cmd [[
   colorscheme rose-pine
   let g:rose_pine_variant = 'dawn'
   ]]
-
-

@@ -2,7 +2,7 @@ vim.g.NERDTreeFileLines = 1
 vim.g.NERDTreeDirArrowExpandable = '▸'
 vim.api.nvim_set_keymap('n', '<C-t>', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
 
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "lua", "rust", "c" },
 
@@ -24,12 +24,13 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-require'nvim-treesitter.configs'.setup {
+
+require 'nvim-treesitter.configs'.setup {
   autotag = {
     enable = true,
     enable_rename = true,
     enable_close = true,
     enable_close_on_slash = true,
-    filetypes = { "html" , "xml" },
+    filetypes = { "html", "xml" },
   }
 }
