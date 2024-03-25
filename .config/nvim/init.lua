@@ -42,7 +42,7 @@ packer.startup(function()
     as = 'rose-pine',
   })
   use 'norcalli/nvim-colorizer.lua'
-
+  use 'anuvyklack/pretty-fold.nvim'
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',
@@ -68,7 +68,6 @@ packer.startup(function()
   use 'simrat39/rust-tools.nvim'
 
   -- Debugging
-  use 'mfussenegger/nvim-dap'
 
 
   -- 3rd party
@@ -89,10 +88,10 @@ vim.cmd [[
   set tabstop=2
   set softtabstop=2
   set foldmethod=marker
+  set nowrap
 ]]
 
 vim.g.rust_recommended_style = 0;
-
 
 -- Airline configuration
 vim.g.airline_theme = 'minimalist'
