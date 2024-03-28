@@ -32,6 +32,7 @@ packer.startup(function()
   use 'mbbill/undotree'
   use 'windwp/nvim-ts-autotag'
 
+
   -- visual
   use 'ryanoasis/vim-devicons'
   use 'vim-airline/vim-airline'
@@ -67,8 +68,9 @@ packer.startup(function()
   }
   use 'simrat39/rust-tools.nvim'
 
-  -- Debugging
 
+  -- markdown preview
+  use { "ellisonleao/glow.nvim" }
 
   -- 3rd party
   use {
