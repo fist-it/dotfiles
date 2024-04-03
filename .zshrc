@@ -132,8 +132,5 @@ alias cr="cargo run"
 
 # tmux
 alias tmx="tmux source-file ~/.tmux.conf"
-if tmux has-session 2>/dev/null; then
-else
-  tmux new-session -d -s main
-fi
+
 

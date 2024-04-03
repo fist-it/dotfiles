@@ -45,6 +45,7 @@
     per_directory_history   # Oh My Zsh per-directory-history local/global indicator
     # =========================[ Line #2 ]=========================
     #ram
+    ip
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
