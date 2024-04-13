@@ -1,7 +1,3 @@
-vim.g.NERDTreeFileLines = 1
-vim.g.NERDTreeDirArrowExpandable = '▸'
-vim.api.nvim_set_keymap('n', '<C-t>', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
-
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "lua", "rust", "c" },

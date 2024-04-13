@@ -15,7 +15,7 @@ packer.init({
 })
 
 
-vim.g.mapleader = ','
+vim.g.mapleader = ' '
 
 -- Load plugins
 packer.startup(function()
@@ -76,6 +76,14 @@ packer.startup(function()
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
     requires = { { 'nvim-lua/plenary.nvim' } }
+  }
+
+  -- for learning
+  use { 'm4xshen/hardtime.nvim',
+    requires = {
+      { "nvim-lua/plenary.nvim" },
+      { "MunifTanjim/nui.nvim" }
+    }
   }
 end)
 

@@ -108,6 +108,7 @@ alias cl="clear"
 alias duck="du -sh *"
 
 eval "$(zoxide init zsh --cmd cd)"
+eval "$(fzf --zsh)"
 
 # fast dirs
 alias projects="cd ~/Documents/projects"
