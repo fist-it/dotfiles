@@ -29,6 +29,12 @@ packer.startup(function()
     'windwp/nvim-autopairs',
     config = function() require("nvim-autopairs").setup {} end
   }
+  use {
+    'stevearc/oil.nvim',
+    requires = {
+      "nvim-tree/nvim-web-devicons"
+    }
+  }
   use 'mbbill/undotree'
   use 'windwp/nvim-ts-autotag'
 
@@ -99,7 +105,9 @@ vim.cmd [[
   set softtabstop=2
   set foldmethod=marker
   set nowrap
-]]
+  colorscheme rose-pine
+  let g:rose_pine_variant = 'dawn'
+ ]]
 
 vim.g.rust_recommended_style = 0;
 
@@ -110,7 +118,11 @@ vim.g['airline#extensions#tabline#formatter'] = 'unique_tail_improved'
 vim.g.airline_powerline_fonts = 1
 
 
-vim.cmd [[
-  colorscheme rose-pine
-  let g:rose_pine_variant = 'dawn'
-  ]]
+vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<C-j>', '<Down>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<C-k>', '<Up>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<C-l>', '<Right>', { noremap = true })
+vim.api.nvim_set_keymap('c', '<C-h>', '<Left>', { noremap = true })
+vim.api.nvim_set_keymap('c', '<C-j>', '<Down>', { noremap = true })
+vim.api.nvim_set_keymap('c', '<C-k>', '<Up>', { noremap = true })
+vim.api.nvim_set_keymap('c', '<C-l>', '<Right>', { noremap = true })

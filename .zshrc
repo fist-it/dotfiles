@@ -106,6 +106,8 @@ alias reload="source ~/.zshrc"
 alias la="ls -a"
 alias cl="clear"
 alias duck="du -sh *"
+alias tree="tree -a -I '.git' "
+
 
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(fzf --zsh)"
