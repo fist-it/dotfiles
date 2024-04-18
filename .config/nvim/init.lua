@@ -22,9 +22,7 @@ packer.startup(function()
   use 'wbthomason/packer.nvim'
 
   -- functionality
-  use 'preservim/nerdtree'
-  use 'Xuyuanp/nerdtree-git-plugin'
-  use 'tiagofumo/vim-nerdtree-syntax-highlight'
+
   use {
     'windwp/nvim-autopairs',
     config = function() require("nvim-autopairs").setup {} end
@@ -102,14 +100,6 @@ packer.startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
-
-  -- for learning
-  use { 'm4xshen/hardtime.nvim',
-    requires = {
-      { "nvim-lua/plenary.nvim" },
-      { "MunifTanjim/nui.nvim" }
-    }
-  }
 end)
 
 
@@ -125,6 +115,8 @@ vim.cmd [[
   set foldmethod=marker
   set nowrap
  ]]
+
+vim.api.nvim_set_keymap('n', '<leader>w', ':bd<CR>', { noremap = true, silent = false })
 
 vim.g.rust_recommended_style = 0;
 
