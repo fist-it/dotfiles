@@ -106,8 +106,8 @@ alias reload="source ~/.zshrc"
 alias la="ls -a"
 alias cl="clear"
 alias duck="du -sh *"
-alias tree="tree -a -I '.git' "
-
+alias tree="tree -a -I '.git'"
+alias grep='pg'
 
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(fzf --zsh)"

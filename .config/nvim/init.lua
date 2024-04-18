@@ -35,21 +35,28 @@ packer.startup(function()
       "nvim-tree/nvim-web-devicons"
     }
   }
-  use 'mbbill/undotree'
+  use {
+    "jiaoshijie/undotree",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  }
   use 'windwp/nvim-ts-autotag'
 
 
   -- visual
+
+  use 'olivercederborg/poimandres.nvim'
   use 'ryanoasis/vim-devicons'
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
   use 'nvim-treesitter/nvim-treesitter'
-  use({
-    'rose-pine/neovim',
-    as = 'rose-pine',
-  })
   use 'norcalli/nvim-colorizer.lua'
   use 'anuvyklack/pretty-fold.nvim'
+
+  -- lsp
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',
@@ -72,6 +79,11 @@ packer.startup(function()
       { 'rafamadriz/friendly-snippets' },
     }
   }
+  use { 'folke/trouble.nvim',
+    requires = {
+      "nvim-tree/nvim-web-devicons"
+    }
+  }
   use 'simrat39/rust-tools.nvim'
 
 
@@ -80,7 +92,7 @@ packer.startup(function()
 
   -- 3rd party
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    'nvim-telescope/telescope.nvim',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
@@ -105,17 +117,10 @@ vim.cmd [[
   set softtabstop=2
   set foldmethod=marker
   set nowrap
-  colorscheme rose-pine
-  let g:rose_pine_variant = 'dawn'
  ]]
 
 vim.g.rust_recommended_style = 0;
 
--- Airline configuration
-vim.g.airline_theme = 'minimalist'
-vim.g['airline#extensions#tabline#enabled'] = 1
-vim.g['airline#extensions#tabline#formatter'] = 'unique_tail_improved'
-vim.g.airline_powerline_fonts = 1
 
 
 vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', { noremap = true })
