@@ -45,6 +45,13 @@ packer.startup(function()
 
 
   -- visual
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end
+  }
 
   use 'olivercederborg/poimandres.nvim'
   use 'ryanoasis/vim-devicons'
@@ -120,8 +127,6 @@ vim.cmd [[
  ]]
 
 vim.g.rust_recommended_style = 0;
-
-
 
 vim.api.nvim_set_keymap('i', '<C-h>', '<Left>', { noremap = true })
 vim.api.nvim_set_keymap('i', '<C-j>', '<Down>', { noremap = true })
