@@ -53,4 +53,9 @@ lsp.on_attach(function(client, bufnr)
   lsp_format_on_save(bufnr)
 end)
 
+vim.keymap.set('n', 'gl', function()
+  vim.diagnostic.open_float()
+end)
+
+
 lsp.setup()
