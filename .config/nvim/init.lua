@@ -29,6 +29,7 @@ packer.startup(function()
       "nvim-neotest/nvim-nio"
     }
   }
+  use 'jay-babu/mason-nvim-dap.nvim'
   use {
     'windwp/nvim-autopairs',
     config = function() require("nvim-autopairs").setup {} end
@@ -121,7 +122,7 @@ vim.cmd [[
   set nowrap
  ]]
 
-vim.api.nvim_set_keymap('n', '<leader>w', ':bd<CR>', { noremap = true, silent = false })
+vim.api.nvim_set_keymap('n', '<leader>w', ':bd<CR>', { noremap = true, silent = true })
 
 vim.g.rust_recommended_style = 0;
 

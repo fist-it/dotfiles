@@ -107,14 +107,14 @@ alias la="ls -a"
 alias cl="clear"
 alias duck="du -sh *"
 alias tree="tree -a -I '.git'"
-alias grep='pg'
+alias off="sudo shutdown -s now"
+#alias grep="pgrep"
 
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(fzf --zsh)"
 
 # fast dirs
 alias projects="cd ~/Documents/projects"
-alias pg="cd ~/Documents/pg_eti/semestr_2/"
 alias dot="cd ~/.dotfiles/"
 
 source ~/.p10k.zsh

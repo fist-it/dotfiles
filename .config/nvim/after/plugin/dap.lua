@@ -1,8 +1,6 @@
 local dap = require('dap')
+local dapui = require('dapui')
 
-dap.configurations.cpp = {
-  type = 'cpp',
-  request = 'launch',
-  name = 'Launch file',
-  program = "${file}",
-}
+
+
+dapui.setup()
