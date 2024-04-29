@@ -56,4 +56,5 @@ local config = {
 
 local trouble = require("trouble")
 
-vim.keymap.set("n", "<leader>T", function() trouble.toggle() end);
+
+vim.keymap.set("n", "<leader>T", function() trouble.toggle() end, { desc = "toggle Trouble view" } );
