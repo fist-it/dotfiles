@@ -8,6 +8,13 @@ poimandres.setup {
   disable_italics = false,         -- disable italics
 }
 
+function Color(color)
+  color = color or "poimandres"
+  vim.cmd.colorscheme(color)
 
--- lua set scheme
-vim.cmd('colorscheme poimandres')
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
+Color()

@@ -6,5 +6,4 @@ vim.keymap.set('n', '<leader>ps', function()
     search = vim.fn.input("Grep > ")
   });
 end,
-{ desc = "find phrase in files by fzf"}
-)
+{ desc = "find phrase in files by fzf"})

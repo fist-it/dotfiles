@@ -9,6 +9,7 @@ lsp.set_sign_icons({
   info = '»'
 })
 
+-- only set keymaps on lsp attach
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('user_lsp_attach', { clear = true }),
   callback = function(event)

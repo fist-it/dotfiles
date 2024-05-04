@@ -53,8 +53,3 @@ local config = {
   },
   use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
 }
-
-local trouble = require("trouble")
-
-
-vim.keymap.set("n", "<leader>T", function() trouble.toggle() end, { desc = "toggle Trouble view" } );
