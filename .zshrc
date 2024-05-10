@@ -73,7 +73,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=()
+plugins=(battery fzf macos)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,7 +127,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --border="rounded" --border-label="fist" --border-label-pos="0" --preview-window="border-rounded"
   --prompt="∮" --marker=">" --pointer="◆" --separator="─"
   --scrollbar="│" --info="right"'
-
 
 export PATH=$PATH:/Users/fist_it/.spicetify
 alias cr="cargo run"

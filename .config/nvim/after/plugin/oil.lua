@@ -4,17 +4,20 @@ require("oil").setup({
   default_file_explorer = true,
   -- Id is automatically added at the beginning, and name at the end
   -- See :help oil-columns
+
   columns = {
     "icon",
     -- "permissions",
     -- "size",
     -- "mtime",
   },
+
   -- Buffer-local options to use for oil buffers
   buf_options = {
     buflisted = false,
     bufhidden = "hide",
   },
+
   -- Window-local options to use for oil buffers
   win_options = {
     wrap = false,
@@ -26,6 +29,7 @@ require("oil").setup({
     conceallevel = 3,
     concealcursor = "nvic",
   },
+
   -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
   delete_to_trash = false,
   -- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)

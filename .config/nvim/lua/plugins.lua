@@ -12,13 +12,6 @@ packer.startup(function()
   use 'wbthomason/packer.nvim'
 
   -- functionality
-  use 'mfussenegger/nvim-dap'
-  use { "rcarriga/nvim-dap-ui",
-    requires = {
-      "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio"
-    }
-  }
   use 'jay-babu/mason-nvim-dap.nvim'
   use {
     'windwp/nvim-autopairs',
@@ -38,6 +31,16 @@ packer.startup(function()
   }
   use 'windwp/nvim-ts-autotag'
   use "sontungexpt/url-open"
+
+  -- debugging
+  use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui",
+    requires = {
+      "nvim-neotest/nvim-nio"
+    }
+  }
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-telescope/telescope-dap.nvim'
 
   -- visual
   use {
@@ -97,5 +100,3 @@ packer.startup(function()
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 end)
-
-

@@ -3,8 +3,8 @@ vim.g.mapleader = ' '
 
 
 -- buffer operations
-vim.api.nvim_set_keymap('n', '<leader>w', ':bd<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>n', ':bn<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>w', ':bd<CR>', { noremap = true, silent = true, desc = "close current buffer" })
+vim.api.nvim_set_keymap('n', '<leader>n', ':bn<CR>', { noremap = true, silent = true, desc = "go to next buffer" })
 
 
 -- command mode ctrl+hjkl navigation instead of arrows
@@ -22,7 +22,7 @@ vim.keymap.set("n", "gha", "<esc>:URLOpenHighlightAll<cr>")
 vim.keymap.set("n", "ghc", "<esc>:URLOpenHighlightAllClear<cr>")
 
 -- trouble
-vim.keymap.set("n", "<leader>T", function() require("trouble").toggle() end, { desc = "toggle Trouble view" } );
+vim.keymap.set("n", "<leader>T", function() require("trouble").toggle() end, { desc = "toggle Trouble view" });
 
 vim.keymap.set("n", "J", "mzJ`z")
 
@@ -30,3 +30,4 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end, { desc = "format current buffer" });
