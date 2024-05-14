@@ -15,6 +15,9 @@ return {
     }
   },
   {
+    "pocco81/true-zen.nvim"
+  },
+  {
     'jiaoshijie/undotree',
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -74,6 +77,9 @@ return {
       { 'L3MON4D3/LuaSnip' },
       { 'rafamadriz/friendly-snippets' },
     }
+  },
+  {
+    'github/copilot.vim'
   },
   {
     'folke/trouble.nvim',
