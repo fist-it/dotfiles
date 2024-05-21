@@ -98,20 +98,4 @@ lsp.setup_nvim_cmp({
 
 local augroup = vim.api.nvim_create_augroup('LspFroatting', {})
 
-local lsp_format_on_save = function(bufnr)
-  vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-  vim.api.nvim_create_autocmd('BufWritePre', {
-    group = augroup,
-    buffer = bufnr,
-    callback = function()
-      vim.lsp.buf.format()
-    end,
-  })
-end
-
-
-lsp.on_attach(function(bufnr)
-  lsp_format_on_save(bufnr)
-end)
-
 lsp.setup()

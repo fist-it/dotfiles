@@ -2,9 +2,6 @@ return {
 
   -- functionality
   {
-    'jay-babu/mason-nvim-dap.nvim'
-  },
-  {
     'windwp/nvim-autopairs',
     config = function() require('nvim-autopairs').setup {} end
   },
@@ -26,16 +23,6 @@ return {
   { 'windwp/nvim-ts-autotag' },
   { 'sontungexpt/url-open' },
 
-  -- debugging
-  { 'mfussenegger/nvim-dap' },
-  {
-    'rcarriga/nvim-dap-ui',
-    dependencies = {
-      'nvim-neotest/nvim-nio'
-    }
-  },
-  { 'theHamsta/nvim-dap-virtual-text' },
-  { 'nvim-telescope/telescope-dap.nvim' },
 
   -- visual
   {
@@ -53,7 +40,6 @@ return {
   },
   { 'nvim-treesitter/nvim-treesitter' },
   { 'norcalli/nvim-colorizer.lua' },
-  { 'anuvyklack/pretty-fold.nvim' },
 
   -- lsp
   {
@@ -77,9 +63,6 @@ return {
       { 'L3MON4D3/LuaSnip' },
       { 'rafamadriz/friendly-snippets' },
     }
-  },
-  {
-    'github/copilot.vim'
   },
   {
     'folke/trouble.nvim',

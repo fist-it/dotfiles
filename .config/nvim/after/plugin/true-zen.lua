@@ -11,8 +11,8 @@ require('true-zen').setup({
 			padding = { -- padding windows
 				left = 52,
 				right = 52,
-				top = 0,
-				bottom = 0,
+				top = 20,
+				bottom = 20,
 			},
 			callbacks = { -- run functions when opening/closing Ataraxis mode
 				open_pre = nil,
@@ -79,8 +79,8 @@ require('true-zen').setup({
 
 local api = vim.api
 
-api.nvim_set_keymap("n", "<leader>zn", ":TZNarrow<CR>", { desc = "Narrow the current buffer"})
-api.nvim_set_keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", { desc = "Narrow the current selection"})
-api.nvim_set_keymap("n", "<leader>zf", ":TZFocus<CR>", { desc = "Focus the current buffer"})
-api.nvim_set_keymap("n", "<leader>zm", ":TZMinimalist<CR>", {})
-api.nvim_set_keymap("n", "<leader>za", ":TZAtaraxis<CR>", {})
+api.nvim_set_keymap("n", "<leader>zn", ":TZNarrow<CR>", { desc = "Narrow the current buffer", silent = true})
+api.nvim_set_keymap("v", "<leader>zn", ":'<,'>TZNarrow<CR>", { desc = "Narrow the current selection", silent = true})
+api.nvim_set_keymap("n", "<leader>zf", ":TZFocus<CR>", { desc = "Focus the current buffer", silent = true})
+api.nvim_set_keymap("n", "<leader>zm", ":TZMinimalist<CR>", { desc = "Minimalist mode", silent = true})
+api.nvim_set_keymap("n", "<leader>za", ":TZAtaraxis<CR>", { desc = "Ataraxis mode", silent = true})
