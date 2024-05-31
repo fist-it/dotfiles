@@ -90,10 +90,21 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# Pure prompt initialization
+
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
 autoload -U promptinit; promptinit
+
+zstyle :prompt:pure:path color '#91B4D5'
+zstyle ':prompt:pure:prompt:*' color '#5DE4C7'
+zstyle :prompt:pure:git:branch color '#5FB3A1'
+zstyle :prompt:pure:git:dirty color '#D0679D'
+zstyle :prompt:pure:git:stash show yes
+
 prompt pure
+
+
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
