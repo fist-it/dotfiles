@@ -37,3 +37,5 @@ vim.opt.incsearch = true
 vim.opt.scrolloff = 8
 
 vim.opt.mouse = ""
+
+vim.g.rust_recommended_style = 0

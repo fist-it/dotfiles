@@ -24,12 +24,12 @@ require('true-zen').setup({
 		minimalist = {
 			ignored_buf_types = { "nofile" }, -- save current options from any window except ones displaying these kinds of buffers
 			options = { -- options to be disabled when entering Minimalist mode
-				number = false,
-				relativenumber = false,
+				number = true,
+				relativenumber = true,
 				showtabline = 0,
 				signcolumn = "no",
 				statusline = "",
-				cmdheight = 1,
+				cmdheight = 0,
 				laststatus = 0,
 				showcmd = false,
 				showmode = false,
@@ -38,8 +38,7 @@ require('true-zen').setup({
 			},
 			callbacks = { -- run functions when opening/closing Minimalist mode
 				open_pre = nil,
-				open_pos = nil,
-				close_pre = nil,
+				open_pos = nil, close_pre = nil,
 				close_pos = nil
 			},
 		},
@@ -67,7 +66,7 @@ require('true-zen').setup({
 		}
 	},
 	integrations = {
-		tmux = false, -- hide tmux status bar in (minimalist, ataraxis)
+		tmux = true, -- hide tmux status bar in (minimalist, ataraxis)
 		kitty = { -- increment font size in Kitty. Note: you must set `allow_remote_control socket-only` and `listen_on unix:/tmp/kitty` in your personal config (ataraxis)
 			enabled = false,
 			font = "+3"

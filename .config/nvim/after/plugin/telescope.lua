@@ -7,3 +7,5 @@ vim.keymap.set('n', '<leader>ps', function()
   });
 end,
 { desc = "find phrase in files by fzf"})
+
+vim.keymap.set('n', '<leader>k', ":Telescope keymaps<cr>", { desc = "[Telescope] - Search Keymaps"} )
