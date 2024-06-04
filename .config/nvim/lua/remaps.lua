@@ -1,6 +1,3 @@
-
-
-
 -- buffer operations
 vim.api.nvim_set_keymap('n', '<leader>w', ':bd<CR>', { noremap = true, silent = true, desc = "close current buffer" })
 vim.api.nvim_set_keymap('n', '<leader>n', ':bn<CR>', { noremap = true, silent = true, desc = "go to next buffer" })
