@@ -92,7 +92,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Pure prompt initialization
 
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
+if command -v brew &> /dev/null; then
+  fpath+=("$(brew --prefix)/share/zsh/site-functions")
+fi
 
 autoload -U promptinit; promptinit
 
@@ -117,18 +119,17 @@ alias reload="source ~/.zshrc"
 # QOL
 alias la="ls -a"
 alias cl="clear"
-alias duck="du -sh *"
 alias tree="tree -a -I '.git'"
 alias off="sudo shutdown -s now"
-#alias grep="pgrep"
+alias grep="rg"
 
-eval "$(zoxide init zsh --cmd cd)"
-eval "$(fzf --zsh)"
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init zsh --cmd cd)"
+fi
 
-# fast dirs
-alias projects="cd ~/Documents/projects"
-alias dot="cd ~/.dotfiles/"
-
+if command -v fzf &> /dev/null; then
+  eval "$(fzf --zsh)"
+fi
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:#262626
