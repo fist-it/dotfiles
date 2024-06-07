@@ -17,9 +17,8 @@ vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>")
 vim.keymap.set("n", "gha", "<esc>:URLOpenHighlightAll<cr>")
 vim.keymap.set("n", "ghc", "<esc>:URLOpenHighlightAllClear<cr>")
 
--- trouble
-vim.keymap.set("n", "<leader>T", function() require("trouble").toggle() end, { desc = "toggle Trouble view" });
 
+-- merge line bellow with current without moving the cursor
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- move selected lines with indent (shoutout theprimeagen)

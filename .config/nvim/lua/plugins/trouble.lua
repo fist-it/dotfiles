@@ -5,12 +5,12 @@ return {
   keys = {
     {
       "<leader>tT",
-      "<cmd>Trouble diagnostics toggle focus=false filter.buf=0<cr>",
+      "<cmd>Trouble toggle diagnostics focus=false filter.buf=0<cr>",
       desc = "Diagnostics (Trouble)",
     },
     {
       "<leader>tT",
-      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+      "<cmd>Trouble toggle diagnostics filter.buf=0<cr>",
       desc = "Buffer Diagnostics (Trouble)",
     },
     {
