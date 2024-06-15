@@ -12,12 +12,6 @@ vim.api.nvim_set_keymap('c', '<C-l>', '<Right>', { noremap = true })
 -- step out from current file to oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
--- url
-vim.keymap.set("n", "gx", "<esc>:URLOpenUnderCursor<cr>")
-vim.keymap.set("n", "gha", "<esc>:URLOpenHighlightAll<cr>")
-vim.keymap.set("n", "ghc", "<esc>:URLOpenHighlightAllClear<cr>")
-
-
 -- merge line bellow with current without moving the cursor
 vim.keymap.set("n", "J", "mzJ`z")
 
