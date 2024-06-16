@@ -35,7 +35,7 @@ return {
             info = '»'
         })
 
-        -- only set keymaps on lsp attach
+        -- only set keymaps on lsp attach {{{
         vim.api.nvim_create_autocmd('LspAttach', {
             group = vim.api.nvim_create_augroup('user_lsp_attach', { clear = true }),
             callback = function(event)
@@ -61,6 +61,7 @@ return {
                     { desc = "signature help", buffer = event.buf })
             end,
         })
+        -- }}}
 
 
         local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -109,7 +110,6 @@ return {
                 { name = 'path' },
                 { name = 'nvim_lsp' },
                 { name = 'luasnip', keyword_length = 2 },
-                { name = 'buffer',  keyword_length = 3 },
             },
             mapping = cmp.mapping.preset.insert({
                 ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
@@ -122,15 +122,9 @@ return {
                 end,
             },
         })
-
-
-
         lsp.setup_nvim_cmp({
             mapping = cmp.mappings
         })
-
-
-
 
         lsp.setup()
     end
