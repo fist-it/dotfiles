@@ -123,6 +123,7 @@ alias tree="tree -a -I '.git'"
 alias off="sudo shutdown -s now"
 alias grep="rg"
 alias gs="git status"
+alias ff="fastfetch"
 
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh --cmd cd)"
@@ -131,6 +132,8 @@ fi
 if command -v fzf &> /dev/null; then
   eval "$(fzf --zsh)"
 fi
+
+
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:#262626
