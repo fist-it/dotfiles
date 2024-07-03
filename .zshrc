@@ -133,6 +133,7 @@ if command -v fzf &> /dev/null; then
   eval "$(fzf --zsh)"
 fi
 
+alias double="~/.config/scripts/double-xrandr.sh"
 
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
