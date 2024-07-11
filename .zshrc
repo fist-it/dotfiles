@@ -103,10 +103,7 @@ zstyle ':prompt:pure:prompt:*' color '#5DE4C7'
 zstyle :prompt:pure:git:branch color '#5FB3A1'
 zstyle :prompt:pure:git:dirty color '#D0679D'
 zstyle :prompt:pure:git:stash show yes
-
 prompt pure
-
-
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -146,8 +143,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --scrollbar="│" --info="right"'
 
 export PATH=$PATH:/Users/fist_it/.spicetify
-alias cr="cargo run"
 
 # tmux
 alias tmx="tmux source-file ~/.tmux.conf"
-
