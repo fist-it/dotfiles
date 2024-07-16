@@ -36,7 +36,7 @@ return {
         yaml = false,
         markdown = false,
         help = false,
-        gitcommit = false,
+        gitcommit = true,
         gitrebase = false,
         hgcommit = false,
         svn = false,
