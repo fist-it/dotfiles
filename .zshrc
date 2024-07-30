@@ -143,6 +143,3 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --scrollbar="│" --info="right"'
 
 export PATH=$PATH:/Users/fist_it/.spicetify
-
-# tmux
-alias tmx="tmux source-file ~/.tmux.conf"
