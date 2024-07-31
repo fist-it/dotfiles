@@ -200,5 +200,6 @@ bindsym $mod+Shift+w move workspace to output next
 
 exec_always --no-startup-id polybar &
 exec_always feh --bg-fill ~/.local/wallpapers/kid_a.png &
+exec_always --no-startup-id picom &
 
 for_window [class="pavucontrol"] floating enable
