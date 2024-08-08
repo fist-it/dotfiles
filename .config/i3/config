@@ -77,6 +77,7 @@ tiling_drag modifier titlebar
 # start a terminal
 bindsym $mod+t exec kitty
 bindsym $mod+f exec firefox-developer-edition
+bindsym $mod+p exec pavucontrol
 
 # kill focused window
 bindsym $mod+q kill
@@ -130,9 +131,9 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "1: Main"
+set $ws2 "2: Side"
+set $ws3 "3: Spotify"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
