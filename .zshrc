@@ -121,6 +121,7 @@ alias off="sudo shutdown -s now"
 alias grep="rg"
 alias gs="git status"
 alias ff="fastfetch"
+alias duck="du -h -d 1"
 
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh --cmd cd)"
@@ -130,7 +131,7 @@ if command -v fzf &> /dev/null; then
   eval "$(fzf --zsh)"
 fi
 
-alias double="~/.config/scripts/double-xrandr.sh"
+alias double="~/.config/config_scripts/double-xrandr.sh"
 
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
@@ -143,3 +144,5 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --scrollbar="│" --info="right"'
 
 export PATH=$PATH:/Users/fist_it/.spicetify
+
+
