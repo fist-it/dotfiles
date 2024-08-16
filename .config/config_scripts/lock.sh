@@ -1,5 +1,7 @@
 #!/bin/sh
 
+openrgb -p off &
+
 BLANK='#00000000'
 CLEAR='#ffffff22'
 DEFAULT='#00897bE6'
@@ -33,4 +35,6 @@ i3lock \
 --indicator                  \
 --time-str="%H:%M:%S"        \
 --date-str="%A, %Y-%m-%d"    \
---keylayout 1                \
+--keylayout 1
+
+openrgb -p basic

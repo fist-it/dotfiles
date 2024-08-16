@@ -174,7 +174,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+Control+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 #lock screen
-bindsym $mod+Ctrl+l exec --no-startup-id ~/.config/scripts/lock.sh
+bindsym $mod+Ctrl+l exec --no-startup-id ~/.config/config_scripts/lock.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -200,7 +200,13 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+w move workspace to output next
 
 exec_always --no-startup-id polybar &
-exec_always feh --bg-fill ~/.local/wallpapers/kid_a.png &
+exec_always feh --bg-fill ~/.local/wallpapers/tapera_gory.jpg &
 exec_always --no-startup-id picom &
 
 for_window [class="pavucontrol"] floating enable
+
+exec_always --no-startup-id xset s on
+exec_always --no-startup-id xset s 300
+exec_always --no-startup-id xautolock -time 4 -corners +-+- -locker ~/.config/config_scripts/lock.sh &
+exec_always --no-startup-id ~/.config/config_scripts/double-xrandr.sh &
+exec_always --no-startup-id openrgb -p basic &
