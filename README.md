@@ -45,7 +45,7 @@ Tools I'm currently using:
 
 ## Editor
 
-I use [`neovim`](https://github.com/neovim/neovim) 0.10 with [`Lazy`](https://github.com/folke/lazy.nvim)
+I use [`neovim`](https://github.com/neovim/neovim) 0.10 nightly with [`Lazy`](https://github.com/folke/lazy.nvim)
 plugin manager.
 
 Configuration: **[`lua`](.config/nvim/)**
@@ -65,7 +65,7 @@ Configuration: **[`lua`](.config/nvim/)**
     - Git integration: [`fugitive.vim`](https://github.com/tpope/vim-fugitive)
 
 - Visual plugins:
-    - Colorscheme: [`oxocarbon.nvim`](https://github.com/nyoom-engineering/oxocarbon.nvim)
+    - Colorscheme: [`rose-pine.nvim`](https://github.com/rose-pine/neovim)
     - Line: [`lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim)
     - Color hex preview: [`nvim-colorizer.lua`](https://github.com/norcalli/nvim-colorizer.lua)
 
