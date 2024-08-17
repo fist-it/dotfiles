@@ -98,17 +98,15 @@ fi
 
 autoload -U promptinit; promptinit
 
-zstyle :prompt:pure:path color '#91B4D5'
-zstyle ':prompt:pure:prompt:*' color '#5DE4C7'
-zstyle :prompt:pure:git:branch color '#5FB3A1'
-zstyle :prompt:pure:git:dirty color '#D0679D'
+zstyle :prompt:pure:path color '#9ccfd8'
+zstyle :prompt:pure:prompt:success color '#c4a7e7'
+zstyle :prompt:pure:prompt:error color '#eb6f92'
+
+zstyle :prompt:pure:git:branch color '#ebbcba'
+zstyle :prompt:pure:git:dirty color '#ea9a97'
 zstyle :prompt:pure:git:stash show yes
 prompt pure
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
 alias zshconfig="nvim ~/.zshrc"
 alias myip="curl http://ipecho.net/plain; echo"
 alias reload="source ~/.zshrc"

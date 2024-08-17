@@ -2,10 +2,10 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "source": "endeavouros",
+    // "type": "small",
     "padding": {
       "top": 2
     }
-   //"type": "small"
   },
   "modules": [
     "title",
@@ -22,6 +22,7 @@
       "showPeCoreCount": false,
       "temp": false
     },
+    
     {
       "type": "gpu",
       "temp": false
@@ -33,7 +34,6 @@
       "type": "localip",
       "showIpv6": false,
       "showMac": false
-    },
-    "sound"
+    }
   ]
 }
