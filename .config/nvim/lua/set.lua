@@ -38,4 +38,6 @@ vim.opt.scrolloff = 8
 
 vim.opt.mouse = ""
 
+vim.opt.cursorline = true
+
 vim.g.rust_recommended_style = 0
