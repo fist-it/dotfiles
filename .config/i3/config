@@ -82,9 +82,9 @@ bindsym $mod+q kill
 bindsym $mod+space exec rofi -show drun
 bindsym $mod+s exec rofi -show ssh
 
-# Screenshots tool
-bindsym $mod+Shift+s exec flameshot gui -p ~/screenshots
-bindsym $mod+Shift+f exec flameshot full -p ~/screenshots
+# Screenshots tool -- save to ~/screenshots AND copy to clipboard
+bindsym $mod+Shift+s exec flameshot gui -c -p ~/screenshots
+bindsym $mod+Shift+f exec flameshot full -c -p ~/screenshots
 
 
 # change focus
@@ -206,3 +206,4 @@ exec_always --no-startup-id xset s 300
 exec_always --no-startup-id xautolock -time 4 -corners +-+- -locker ~/.config/config_scripts/lock.sh &
 exec_always --no-startup-id ~/.config/config_scripts/double-xrandr.sh &
 exec_always --no-startup-id openrgb -p basic &
+exec_always --no-startup-id nvfancontrol &

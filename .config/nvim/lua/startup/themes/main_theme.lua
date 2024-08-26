@@ -73,7 +73,7 @@ content = {
     title = "Footer",
     margin = 5,
     content = {
-      "startup.nvim",
+      "",
       "",
       "we ball?"
     },
