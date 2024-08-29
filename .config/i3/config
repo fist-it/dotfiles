@@ -82,9 +82,9 @@ bindsym $mod+q kill
 bindsym $mod+space exec rofi -show drun
 bindsym $mod+s exec rofi -show ssh
 
-# Screenshots tool
-bindsym $mod+Shift+s exec flameshot gui -p ~/screenshots
-bindsym $mod+Shift+f exec flameshot full -p ~/screenshots
+# Screenshots tool -- save to ~/screenshots AND copy to clipboard
+bindsym $mod+Shift+s exec flameshot gui -c -p ~/screenshots
+bindsym $mod+Shift+f exec flameshot full -c -p ~/screenshots
 
 
 # change focus
@@ -176,10 +176,6 @@ bindsym $mod+Ctrl+l exec --no-startup-id ~/.config/config_scripts/lock.sh
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize shrink height 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
@@ -201,8 +197,9 @@ exec_always --no-startup-id picom &
 
 for_window [class="pavucontrol"] floating enable
 
-exec_always --no-startup-id xset s on
-exec_always --no-startup-id xset s 300
+exec_always --no-startup-id xset s on &
+exec_always --no-startup-id xset s 300 &
 exec_always --no-startup-id xautolock -time 4 -corners +-+- -locker ~/.config/config_scripts/lock.sh &
 exec_always --no-startup-id ~/.config/config_scripts/double-xrandr.sh &
 exec_always --no-startup-id openrgb -p basic &
+exec_always --no-startup-id nvfancontrol &
