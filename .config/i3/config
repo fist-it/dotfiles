@@ -192,14 +192,14 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+w move workspace to output next
 
 exec_always --no-startup-id polybar &
-exec_always feh --bg-fill ~/.local/wallpapers/tapera_gory.jpg &
+exec_always feh --bg-fill ~/.local/wallpapers/tapeta_gory.jpg &
 exec_always --no-startup-id picom &
 
 for_window [class="pavucontrol"] floating enable
 
 exec_always --no-startup-id xset s on &
 exec_always --no-startup-id xset s 300 &
-exec_always --no-startup-id xautolock -time 4 -corners +-+- -locker ~/.config/config_scripts/lock.sh &
+exec_always --no-startup-id xautolock -time 4 -corners +-+- -cornersize 30 -locker ~/.config/config_scripts/lock.sh &
 exec_always --no-startup-id ~/.config/config_scripts/double-xrandr.sh &
 exec_always --no-startup-id openrgb -p basic &
 exec_always --no-startup-id nvfancontrol &
