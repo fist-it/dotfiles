@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{ pkgs, inputs, ...}: {
 
   ##########################################################################
   #
@@ -7,7 +7,7 @@
   #  NOTE: Your can find all available options in:
   #    https://daiderd.com/nix-darwin/manual/index.html
   #
-  # TODO Fell free to modify this file to fit your needs.
+  # TODO Feel free to modify this file to fit your needs.
   #
   ##########################################################################
 
@@ -20,6 +20,7 @@
   environment.systemPackages = with pkgs; [
     git
   ];
+
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
   #

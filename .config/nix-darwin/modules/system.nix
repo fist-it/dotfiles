@@ -20,6 +20,7 @@
 
     defaults = {
       menuExtraClock.Show24Hour = true;  # show 24 hour clock
+      # swipescrolldirection = 0;
 
       # other macOS's defaults configuration.
       # ......
