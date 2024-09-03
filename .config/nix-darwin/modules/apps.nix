@@ -1,4 +1,4 @@
-{ pkgs, inputs, ...}: {
+{ pkgs, ...}: {
 
   ##########################################################################
   #
@@ -6,8 +6,6 @@
   #
   #  NOTE: Your can find all available options in:
   #    https://daiderd.com/nix-darwin/manual/index.html
-  #
-  # TODO Feel free to modify this file to fit your needs.
   #
   ##########################################################################
 
@@ -22,8 +20,6 @@
   ];
 
 
-  # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
-  #
   # The apps installed by homebrew are not managed by nix, and not reproducible!
   # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!
   homebrew = {
@@ -40,7 +36,6 @@
     ];
 
     # `brew install`
-    # TODO Feel free to add your favorite apps here.
     brews = [
       "git"
       "btop"
@@ -70,7 +65,6 @@
     ];
 
     # `brew install --cask`
-    # TODO Feel free to add your favorite apps here.
     casks = [
       "firefox@developer-edition"
       "kitty"

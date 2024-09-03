@@ -46,7 +46,6 @@
     darwin,
     ...
   }: let
-    # TODO replace with your own username, system and hostname
     username = "fist_it";
     system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
     hostname = "fist-it";
