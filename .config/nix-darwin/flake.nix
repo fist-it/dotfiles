@@ -46,6 +46,6 @@
     };
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."fist_it".pkgs;
+    darwinPackages = self.darwinConfigurations."fist-it".pkgs;
   };
 }
