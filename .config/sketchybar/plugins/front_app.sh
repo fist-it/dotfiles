@@ -14,13 +14,13 @@ if [ "$SENDER" = "front_app_switched" ]; then
 
   apps=$AEROSPACE_LIST_OF_WINDOWS_IN_FOCUSED_MONITOR
   icon_strip=""
-  # if [ "${apps}" != "" ]; then
-  #   while read -r app
-  #   do
-  #     icon_strip+=" $($CONFIG_DIR/plugins/icon_map.sh "$app")"
-  #   done <<< "${apps}"
-  # else
-  #   icon_strip=" —"
-  # fi
+  if [ "${apps}" != "" ]; then
+    while read -r app
+    do
+      icon_strip+=" $($CONFIG_DIR/plugins/icon_map.sh "$app")"
+    done <<< "${apps}"
+  else
+    icon_strip=" —"
+  fi
   sketchybar --set space.$AEROSPACE_FOCUSED_MONITOR_NO label="$icon_strip"
 fi
