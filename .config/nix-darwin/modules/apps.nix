@@ -35,9 +35,9 @@
       "homebrew/services"
     ];
 
+
     # `brew install`
     brews = [
-      "git"
       "btop"
       "cmake"
       "docker"
@@ -62,6 +62,7 @@
       "vim"
       "tree-sitter"
       "wget"
+      "sketchybar"
     ];
 
     # `brew install --cask`
