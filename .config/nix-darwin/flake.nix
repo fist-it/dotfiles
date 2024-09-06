@@ -29,7 +29,6 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-
   # The `outputs` function will return all the build results of the flake.
   # A flake can have many use cases and different types of outputs,
   # parameters in `outputs` are defined in `inputs` and can be referenced by their names.
@@ -61,14 +60,12 @@
         ./modules/host-users.nix
       ];
 
-       # NeoVim nightly overlay
-       # nixpkgs = {
-       #   overlays = [
-       #     inputs.neovim-nightly-overlay.overlay
-       #   ];
-       # };
-
-
+      # NeoVim nightly overlay
+      # nixpkgs = {
+      #   overlays = [
+      #     inputs.neovim-nightly-overlay.overlay
+      #   ];
+      # };
     };
     # nix code formatter
     formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;

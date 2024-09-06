@@ -1,15 +1,13 @@
-{ pkgs, ... }:
-
-  ###################################################################################
-  #
-  #  macOS's System configuration
-  #
-  #  All the configuration options are documented here:
-  #    https://daiderd.com/nix-darwin/manual/index.html#sec-options
-  #
-  ###################################################################################
+{pkgs, ...}:
+###################################################################################
+#
+#  macOS's System configuration
+#
+#  All the configuration options are documented here:
+#    https://daiderd.com/nix-darwin/manual/index.html#sec-options
+#
+###################################################################################
 {
-
   system = {
     # activationScripts are executed every time you boot the system or run `nixos-rebuild` / `darwin-rebuild`.
     activationScripts.postUserActivation.text = ''
@@ -19,8 +17,31 @@
     '';
 
     defaults = {
-      menuExtraClock.Show24Hour = true;  # show 24 hour clock
-      NSGlobalDomain."com.apple.swipescrolldirection" = true;
+      dock = {
+        autohide = true;
+        show-recents = false;
+      };
+
+      finder = {
+        _FXShowPosixPathInTitle = true;
+        AppleShowAllExtensions = true;
+        FXEnableExtensionChangeWarning = false;
+        ShowPathbar = true;
+        ShowStatusBar = true;
+      };
+
+      trackpad = {
+        Clicking = false;
+        TrackpadRightClick = true;
+        TrackpadThreeFingerDrag = true;
+      };
+
+      NSGlobalDomain = {
+        "com.apple.swipescrolldirection" = true;
+        AppleInterfaceStyle = "Dark";
+      };
+
+      menuExtraClock.Show24Hour = true; # show 24 hour clock
       # other macOS's defaults configuration.
       # ......
     };
@@ -32,5 +53,7 @@
   # Create /etc/zshrc that loads the nix-darwin environment.
   # this is required if you want to use darwin's default shell - zsh
   programs.zsh.enable = true;
-
+  environment.shells = [
+    pkgs.zsh
+  ];
 }
