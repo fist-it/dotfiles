@@ -38,6 +38,7 @@
 
       NSGlobalDomain = {
         "com.apple.swipescrolldirection" = true;
+        # "com.apple.swipescrolldirection" = system.current_state.device.mouse == 1;
         AppleInterfaceStyle = "Dark";
       };
 
