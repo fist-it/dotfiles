@@ -15,7 +15,7 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 -- merge line bellow with current without moving the cursor
 vim.keymap.set("n", "J", "mzJ`z")
 
--- move selected lines with indent (shoutout theprimeagen)
+-- move selected lines with indent (from theprimeagen)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 

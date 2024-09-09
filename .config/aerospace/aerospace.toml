@@ -7,6 +7,7 @@
 after-login-command = [
   "exec-and-forget sketchybar",
   "exec-and-forger open -a raycast",
+  "exec-and-forger orb",
 ]
 
 # You can use it to add commands that run after login to macOS user session.

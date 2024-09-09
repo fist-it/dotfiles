@@ -1,6 +1,3 @@
-# just is a command runner, Justfile is very similar to Makefile, but simpler.
-
-# TODO update hostname here!
 hostname := "fist-it"
 
 ############################################################################
@@ -9,6 +6,8 @@ hostname := "fist-it"
 #
 ############################################################################
 
+rebuild:
+  darwin-rebuild switch --flake ~/.dotfiles/.config/nix-darwin
 
 darwin:
   nix build .#darwinConfigurations.{{hostname}}.system \
@@ -16,7 +15,7 @@ darwin:
 
   ./result/sw/bin/darwin-rebuild switch --flake .#{{hostname}}
 
-darwin-debug: darwin-set-proxy
+darwin-debug:
   nix build .#darwinConfigurations.{{hostname}}.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes'
 

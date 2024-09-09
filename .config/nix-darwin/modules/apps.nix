@@ -71,6 +71,8 @@
       "orbstack"
       "aerospace"
       "wireshark"
+      "raycast"
+      "iina"
     ];
   };
 }
