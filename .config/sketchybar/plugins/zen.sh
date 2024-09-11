@@ -12,7 +12,9 @@ zen_on() {
              --set spotify.play updates=off \
              --set brew drawing=off \
              --set volume drawing=off \
-             --set github.bell drawing=off
+             --set github.bell drawing=off \
+             --set local_ip drawing=off
+             
 }
 
 zen_off() {
@@ -26,7 +28,8 @@ zen_off() {
              --set spotify.play updates=on \
              --set brew drawing=on \
              --set volume drawing=on \
-             --set github.bell drawing=on
+             --set github.bell drawing=on \
+             --set local_ip drawing=on
 }
 
 if [ "$1" = "on" ]; then
