@@ -11,7 +11,7 @@ local_ip=(
   script="$LOCAL_IP"
 )
 
-sketchybar --add item local_ip right       \
+sketchybar --add item local_ip right \
            --set local_ip "${local_ip[@]}" \
            --set local_ip label="$LOCAL_IP"
 

@@ -115,9 +115,7 @@ alias reload="source ~/.zshrc"
 alias la="ls -a"
 alias cl="clear"
 alias tree="tree -a -I '.git'"
-alias off="sudo shutdown -s now"
 alias grep="rg"
-alias gs="git status"
 alias ff="fastfetch"
 alias duck="du -h -d 1"
 
@@ -128,9 +126,6 @@ fi
 if command -v fzf &> /dev/null; then
   eval "$(fzf --zsh)"
 fi
-
-alias double="~/.config/config_scripts/double-xrandr.sh"
-
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:#262626
