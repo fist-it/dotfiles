@@ -35,35 +35,56 @@ return {
         },
       }
 
+      dap.configurations.go = {
+        {
+          type = 'go',
+          name = 'Debug',
+          request = 'launch',
+          program = '${file}',
+          dlvToolPath = vim.fn.exepath('dlv')
+        }
+      }
 
 
-      dap.listeners.after.event_initialized['dapui_config'] = function()
-        ui.open()
+
+      local dapui = require("dapui")
+      dap.listeners.before.attach.dapui_config = function()
+        dapui.open()
       end
-      dap.listeners.before.event_terminated['dapui_config'] = function()
-        ui.close()
+      dap.listeners.before.launch.dapui_config = function()
+        dapui.open()
       end
-      dap.listeners.before.event_exited['dapui_config'] = function()
-        ui.close()
+      dap.listeners.before.event_terminated.dapui_config = function()
+        dapui.close()
       end
+      dap.listeners.before.event_exited.dapui_config = function()
+        dapui.close()
+      end
+
 
       vim.keymap.set("n", "<leader>?", function()
         ui.eval(nil, { enter = true })
       end)
 
       -- Keybindings for DAP
-      vim.api.nvim_set_keymap('n', '<leader>b', ":lua require'dap'.toggle_breakpoint()<CR>",
+      vim.api.nvim_set_keymap('n', '<leader>db', ":lua require'dap'.toggle_breakpoint()<CR>",
         { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>cc', ":lua require'dap'.run_to_cursor()<CR>",
+      vim.api.nvim_set_keymap('n', '<leader>dr', ":lua require'dap'.run_to_cursor()<CR>",
         { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>dc', ":lua require'dap'.continue()<CR>",
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leadec>n', ":lua require'dap'.step_over()<CR>",
         { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>dsi', ":lua require'dap'.step_into()<CR>",
         { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<leader>dso', ":lua require'dap'.step_out()<CR>",
         { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>duo', ":lua require'dapui'.open()<CR>",
+        { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>duc', ":lua require'dapui'.close()<CR>",
+        { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>do', ":lua require'dap'.step_over()<CR>",
+        { noremap = true, silent = true })
+
+
     end
   }
 }

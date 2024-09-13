@@ -73,6 +73,7 @@
       "wireshark"
       "raycast"
       "iina"
+      "hiddenbar"
     ];
   };
 }
