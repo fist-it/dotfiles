@@ -23,7 +23,12 @@ return {
       },
       sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff' },
+        lualine_b = { 'branch', 'diff',
+          {
+            '%S',
+            color = { fg = "#e0def4" },
+          }
+        },
         lualine_c = { 'copilot' }, -- 'buffers'
         lualine_x = { 'filetype' },
         lualine_y = { 'hostname', 'diagnostics' },

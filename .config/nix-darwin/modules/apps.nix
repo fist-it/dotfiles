@@ -74,6 +74,7 @@
       "raycast"
       "iina"
       "hiddenbar"
+      "vlc"
     ];
   };
 }

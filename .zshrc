@@ -115,7 +115,6 @@ alias reload="source ~/.zshrc"
 alias la="ls -a"
 alias cl="clear"
 alias tree="tree -a -I '.git'"
-alias grep="rg"
 alias ff="fastfetch"
 alias duck="du -h -d 1"
 

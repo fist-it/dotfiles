@@ -5,9 +5,9 @@
     //"width": 40,
     //"height": 40,
     //"preserveAspectRatio": true,
-    "source": "nixOS",
+    "source": "/Users/fist_it/.config/fastfetch/art.txt",
     "color": {},
-    "type": "small",
+    "type": "file",
     "padding": {
       "top": 2
     }
