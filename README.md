@@ -37,9 +37,10 @@ Tools I'm currently using:
     - [`i3`](https://i3wm.org/) Window Manager
     - simple [`scripts`](.config/scripts/)
     - [`rofi`](https://github.com/davatorium/rofi)
-    - [`flameshot`](https://flameshot.org/) (simple screenshots)
+    - [`polybar`](https://github.com/polybar/polybar)
 - MacOS:
     - [`aerospace`](https://github.com/nikitabobko/AeroSpace) Window Manager
+    - [`sketchybar`](https://github.com/FelixKratz/SketchyBar) MacOS info bar
     - [`karabiner elements`](https://karabiner-elements.pqrs.org/) (rebinding
       CapsLock to Esc)
 
@@ -63,10 +64,12 @@ Configuration: **[`lua`](.config/nvim/)**
     - Markdown preview: [`Glow.nvim`](https://github.com/ellisonleao/glow.nvim)
     - Hyperlink navigation: [`gx.nvim`](https://github.com/chrishrb/gx.nvim)
     - Git integration: [`fugitive.vim`](https://github.com/tpope/vim-fugitive)
+    - Expanded in/around vim motions: [`mini.ai`](https://github.com/echasnovski/mini.ai)
 
 - Visual plugins:
     - Colorscheme: [`rose-pine.nvim`](https://github.com/rose-pine/neovim)
     - Line: [`lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim)
+    - Noice: [`Noice.nvim`](https://github.com/folke/noice.nvim)
     - Color hex preview: [`nvim-colorizer.lua`](https://github.com/norcalli/nvim-colorizer.lua)
 
 I also use [`mason.nvim`](https://github.com/williamboman/mason.nvim) to download
