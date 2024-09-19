@@ -7,11 +7,12 @@ local_ip=(
   icon.padding_right=0
   label.align=right
   padding_left=15
-  update_freq=30
-  script="$LOCAL_IP"
+  update_freq=300
+  script="$PLUGIN_DIR/local_ip.sh"
 )
 
 sketchybar --add item local_ip right \
            --set local_ip "${local_ip[@]}" \
-           --set local_ip label="$LOCAL_IP"
+           --set local_ip label="$LOCAL_IP" \
+           --subscribe weather mouse.clicked
 
