@@ -113,7 +113,7 @@ alias reload="source ~/.zshrc"
 
 # QOL
 alias la="ls -a"
-alias cl="clear"
+alias cl=" clear"
 alias tree="tree -a -I '.git'"
 alias ff="fastfetch"
 alias duck="du -h -d 1"
@@ -125,6 +125,11 @@ fi
 if command -v fzf &> /dev/null; then
   eval "$(fzf --zsh)"
 fi
+
+# excluding listing directories and changint them from zsh history
+setopt hist_ignore_space
+alias ls=" ls --color=auto"
+alias cd=" cd"
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:#262626
