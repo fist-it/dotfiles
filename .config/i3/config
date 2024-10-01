@@ -71,10 +71,26 @@ floating_modifier $modopt
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# start a terminal
+# bindings
 bindsym $modopt+t exec kitty
 bindsym $modopt+f exec firefox-developer-edition
 bindsym $modopt+p exec pavucontrol
+
+# cleanup for numpad bindings
+set $KP_1 87
+set $KP_2 88
+set $KP_3 89
+set $KP_4 83
+set $KP_5 84
+set $KP_6 85
+set $KP_7 79
+set $KP_8 80
+set $KP_9 81
+set $KP_0 90
+
+# numpad bindings
+bindcode $KP_1 exec /opt/spotify/spotify
+bindcode $KP_2 exec vesktop
 
 # kill focused window
 bindsym $modcom+q kill

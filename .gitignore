@@ -1,3 +1,4 @@
 .stow-global-ignore
 
 .DS_Store
+explicit_filter.restore
