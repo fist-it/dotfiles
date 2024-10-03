@@ -24,4 +24,4 @@ WEATHER_DESCRIPTION=$(echo "$WEATHER_JSON" | jq '.weather[0].description' | tr -
 #WEATHER_DESCRIPTION=$(echo $WEATHER_JSON | jq '.current_condition[0].lang_ko[0].value' | tr -d '"' | sed 's/\(.\{16\}\).*/\1.../')
 
 sketchybar --set $NAME \
-  label="$TEMPERATURE$(echo '°')C, $WEATHER_DESCRIPTION"
+  label="$TEMPERATURE °C, $WEATHER_DESCRIPTION "

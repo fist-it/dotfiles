@@ -14,5 +14,4 @@ local_ip=(
 sketchybar --add item local_ip right \
            --set local_ip "${local_ip[@]}" \
            --set local_ip label="$LOCAL_IP" \
-           --subscribe weather mouse.clicked
-
+           --subscribe local_ip mouse.clicked
