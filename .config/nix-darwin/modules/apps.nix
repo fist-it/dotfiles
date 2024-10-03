@@ -17,7 +17,6 @@
   environment.systemPackages = with pkgs; [
     git
     just
-    vesktop
   ];
 
   # The apps installed by homebrew are not managed by nix, and not reproducible!
