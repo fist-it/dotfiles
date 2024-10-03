@@ -16,6 +16,8 @@
       /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
     '';
 
+    stateVersion = 5;
+
     defaults = {
       dock = {
         autohide = true;
