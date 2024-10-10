@@ -20,6 +20,8 @@
     "kernel",
     "uptime",
     "editor",
+    "packages",
+  
     "display",
     "terminal",
     {
@@ -38,6 +40,7 @@
       "type": "localip",
       "showIpv6": false,
       "showMac": false
-    }
+    },
+    "bluetooth"
   ]
 }

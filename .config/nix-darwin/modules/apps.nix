@@ -74,6 +74,7 @@
     pure-prompt
     python3
     ripgrep
+    rustup
     stow
     tmux
     tree
