@@ -31,6 +31,7 @@
       "docker-completion"
       "git-spice"
       "sketchybar"
+      "spicetify-cli"
     ];
 
     # `brew install --cask`
@@ -66,7 +67,6 @@
     git
     go
     lua
-    # luajit
     neovim
     ninja
     nmap
