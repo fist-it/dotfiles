@@ -1,12 +1,15 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  ...
+}: {
   ##########################################################################
-  #
-  #  Install all apps and packages here.
+  # Install all apps and packages here.
   #
   #  NOTE: Your can find all available options in:
   #    https://daiderd.com/nix-darwin/manual/index.html
   #
   ##########################################################################
+
 
   # The apps installed by homebrew are not managed by nix, and not reproducible!
   # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!
@@ -32,6 +35,10 @@
       "git-spice"
       "sketchybar"
       "spicetify-cli"
+      "libvterm"
+      "neovim"
+      "cmake"
+      "ncdu"
     ];
 
     # `brew install --cask`
@@ -60,14 +67,12 @@
   environment.systemPackages = with pkgs; [
     just
     btop
-    cmake
     fastfetch
     fzf
     gcc
     git
     go
     lua
-    neovim
     ninja
     nmap
     parallel
@@ -86,5 +91,4 @@
     glow
     zoxide
   ];
-
 }

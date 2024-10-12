@@ -9,6 +9,6 @@ return {
 		vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = "[Telescope] find files in current repo excl. gitignore" })
 		vim.keymap.set('n', '<leader>ps', builtin.live_grep,	{ desc = "[Telescope] find phrase in files by Telescope " })
 
-		vim.keymap.set('n', '<leader>k', ":Telescope keymaps<cr>", { desc = "[Telescope] - Search Keymaps" })
+		vim.keymap.set('n', '<leader>K', ":Telescope keymaps<cr>", { desc = "[Telescope] - Search Keymaps" })
 	end
 }
