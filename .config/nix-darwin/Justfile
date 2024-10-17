@@ -42,6 +42,7 @@ gc: # garbage collect nix store (clean)
   sudo nix store gc --debug
 
 clean: gc # in case i forget its called gc
+  brew cleanup
 
 
 fmt:
