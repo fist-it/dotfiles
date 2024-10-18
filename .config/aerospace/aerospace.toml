@@ -64,7 +64,7 @@ outer.top = [
   { monitor."XF270HU" = 38 },
   { monitor."AORUS" = 38 },
   { monitor."built-in" = 10 },
-  24,
+  38,
 ]
 outer.right = 8
 
