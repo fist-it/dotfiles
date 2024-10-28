@@ -71,6 +71,7 @@
     fzf
     gcc
     git
+    gh
     go
     lua
     ninja
