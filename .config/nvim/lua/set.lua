@@ -33,7 +33,6 @@ vim.opt.smartindent = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.scrolloff = 8
-vim.opt.mouse = ""
 vim.opt.cursorline = true
 vim.opt.showcmdloc = 'statusline'
 
