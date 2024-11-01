@@ -61,8 +61,8 @@ client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcol
 default_border pixel 1
 
 # Gaps
-gaps inner 8
-gaps outer 14
+gaps inner 2
+gaps outer 6
 
 # Use Mouse+$modopt to drag floating windows to their wanted position
 floating_modifier $modopt
