@@ -64,27 +64,90 @@ return {
 
       vim.keymap.set("n", "<leader>?", function()
         ui.eval(nil, { enter = true })
-      end)
+      end, { desc = "Evaluate expression under cursor" })
 
       -- Keybindings for DAP
-      vim.api.nvim_set_keymap('n', '<leader>db', ":lua require'dap'.toggle_breakpoint()<CR>",
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>dr', ":lua require'dap'.run_to_cursor()<CR>",
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>dc', ":lua require'dap'.continue()<CR>",
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>dsi', ":lua require'dap'.step_into()<CR>",
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>dso', ":lua require'dap'.step_out()<CR>",
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>duo', ":lua require'dapui'.open()<CR>",
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>duc', ":lua require'dapui'.close()<CR>",
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>do', ":lua require'dap'.step_over()<CR>",
-        { noremap = true, silent = true })
+      vim.keymap.set({ 'n', 'v' }, '<leader>db', function() require 'dap'.toggle_breakpoint() end,
+        {
+          noremap = true,
+          silent = true,
+          desc = "Toggle breakpoint"
+        })
 
+      vim.keymap.set({ 'n', 'v' }, '<leader>dr', function() require 'dap'.run_to_cursor() end,
+        {
+          noremap = true,
+          silent = true,
+          desc = "Run to cursor"
+        })
 
+      vim.keymap.set({ 'n', 'v' }, '<leader>dc', function() require 'dap'.continue() end,
+        {
+          noremap = true,
+          silent = true,
+          desc = "Continue"
+        })
+
+      vim.keymap.set({ 'n', 'v' }, '<leader>dsi', function() require 'dap'.step_into() end,
+        {
+          noremap = true,
+          silent = true,
+          desc = "Step into"
+        })
+
+      vim.keymap.set({ 'n', 'v' }, '<leader>dso', function() require 'dap'.step_out() end,
+        {
+          noremap = true,
+          silent = true,
+          desc = "Step out"
+        })
+
+      vim.keymap.set({ 'n', 'v' }, '<leader>duo', function() require 'dapui'.open() end,
+        {
+          noremap = true,
+          silent = true,
+          desc = "Open DAP UI"
+        })
+
+      vim.keymap.set({ 'n', 'v' }, '<leader>duc', function() require 'dapui'.close() end,
+        {
+          noremap = true,
+          silent = true,
+          desc = "Close DAP UI"
+        })
+
+      vim.keymap.set({ 'n', 'v' }, '<leader>do', function() require 'dap'.step_over() end,
+        {
+          noremap = true,
+          silent = true,
+          desc = "Step over"
+        })
+
+      vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function()
+        require('dap.ui.widgets').preview()
+      end, {
+        noremap = true,
+        silent = true,
+        desc = "Preview"
+      })
+
+      vim.keymap.set('n', '<Leader>df', function()
+        local widgets = require('dap.ui.widgets')
+        widgets.centered_float(widgets.frames)
+      end, {
+        noremap = true,
+        silent = true,
+        desc = "Show frames"
+      })
+
+      vim.keymap.set('n', '<Leader>dss', function()
+        local widgets = require('dap.ui.widgets')
+        widgets.centered_float(widgets.scopes)
+      end, {
+        noremap = true,
+        silent = true,
+        desc = "Show scopes"
+      })
     end
   }
 }

@@ -57,7 +57,7 @@ return {
           { desc = "view references", buffer = event.buf })
         vim.keymap.set('n', '<leader>vrn', function() vim.lsp.buf.rename() end,
           { desc = "rename variable", buffer = event.buf })
-        vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end,
+        vim.keymap.set({ 'n', 'i' }, '<C-h>', function() vim.lsp.buf.signature_help() end,
           { desc = "signature help", buffer = event.buf })
       end,
     })

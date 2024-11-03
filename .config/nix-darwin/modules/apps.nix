@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   ##########################################################################
   # Install all apps and packages here.
   #
@@ -10,7 +7,6 @@
   #
   ##########################################################################
 
-
   # The apps installed by homebrew are not managed by nix, and not reproducible!
   # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!
   homebrew = {
@@ -18,6 +14,7 @@
 
     onActivation = {
       autoUpdate = true;
+      upgrade = true;
       # 'zap': uninstalls all formulae(and related files) not listed here.
       cleanup = "zap";
     };
@@ -39,6 +36,18 @@
       "neovim"
       "cmake"
       "ncdu"
+      "pyenv"
+      "ca-certificates"
+      "mpdecimal"
+      "openssl@3"
+      "readline"
+      "sqlite"
+      "gmp"
+      "isl"
+      "mpfr"
+      "libmpc"
+      "openblas"
+      "gcc"
     ];
 
     # `brew install --cask`
@@ -69,7 +78,6 @@
     btop
     fastfetch
     fzf
-    gcc
     git
     gh
     go
@@ -78,7 +86,6 @@
     nmap
     parallel
     pure-prompt
-    python3
     ripgrep
     rustup
     stow
