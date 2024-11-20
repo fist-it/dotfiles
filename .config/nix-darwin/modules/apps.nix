@@ -36,6 +36,7 @@
       "neovim"
       "cmake"
       "ncdu"
+      "pkgconf"
       "pyenv"
       "ca-certificates"
       "mpdecimal"
