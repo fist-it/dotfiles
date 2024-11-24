@@ -350,7 +350,7 @@ clientkeys = gears.table.join(
     { description = "toggle floating", group = "client" }),
   awful.key({ modcom, "Control" }, "Return", function(c) c:swap(awful.client.getmaster()) end,
     { description = "move to master", group = "client" }),
-  awful.key({ modcom, }, "o", function(c) c:move_to_screen() end,
+  awful.key({ modopt, "Control" }, "w", function(c) c:move_to_screen() end,
     { description = "move to screen", group = "client" }),
   awful.key({ modcom, }, "t", function(c) c.ontop = not c.ontop end,
     { description = "toggle keep on top", group = "client" }),
@@ -486,7 +486,8 @@ awful.rules.rules = {
         "Wpa_gui",
         "veromix",
         "xtightvncviewer",
-        "pavucontrol" },
+        "pavucontrol",
+      },
 
       -- Note that the name property shown in xprop might be set slightly after creation of the client
       -- and the name shown there might not match defined rules here.
