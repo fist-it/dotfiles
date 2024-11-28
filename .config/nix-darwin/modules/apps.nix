@@ -85,7 +85,6 @@
     lua
     ninja
     nmap
-    parallel
     pure-prompt
     ripgrep
     rustup
@@ -96,7 +95,6 @@
     tree-sitter
     wget
     ncurses
-    zig
     glow
     zoxide
   ];
