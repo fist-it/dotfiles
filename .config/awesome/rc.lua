@@ -141,6 +141,7 @@ local taglist_buttons = gears.table.join(
   awful.button({}, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
 
+beautiful.wallpaper = "/home/fist_it/.local/wallpapers/tapeta_gory.jpg"
 
 local function set_wallpaper(s)
   -- Wallpaper
@@ -195,7 +196,7 @@ awful.screen.connect_for_each_screen(function(s)
       s.mypromptbox,
     },
     nil,
-    {             -- Right widgets
+    { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
       mykeyboardlayout,
       wibox.widget.systray(),
@@ -321,6 +322,11 @@ globalkeys = gears.table.join(
 
   awful.key({ modopt }, 'space', function() awful.util.spawn('rofi -show drun') end,
     { description = 'run rofi', group = 'launcher' }),
+
+  -- Screenshots tool -- save to ~/screenshots AND copy to clipboard
+  awful.key({ modopt, 'Shift' }, 's', function() awful.util.spawn('flameshot gui -c -p ~/screenshots') end,
+    { description = 'take screenshot', group = 'launcher' }),
+
 
   awful.key({ modcom }, "x",
     function()
@@ -566,7 +572,7 @@ client.connect_signal("request::titlebars", function(c)
       awful.titlebar.widget.maximizedbutton(c),
       awful.titlebar.widget.stickybutton(c),
       awful.titlebar.widget.ontopbutton(c),
-      awful.titlebar.widget.closebutton(c),
+      -- awful.titlebar.widget.closebutton(c),
       layout = wibox.layout.fixed.horizontal()
     },
     layout = wibox.layout.align.horizontal

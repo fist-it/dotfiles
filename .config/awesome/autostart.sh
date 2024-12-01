@@ -14,4 +14,4 @@ run "openrgb" -p basic
 run "nvfancontrol"
 run "picom"
 # run "polybar"
-exec feh --bg-fill '/home/fist_it/.local/wallpapers/tapeta_gory.jpg'
+# exec feh --bg-fill '/home/fist_it/.local/wallpapers/tapeta_gory.jpg'
