@@ -49,6 +49,7 @@
       "libmpc"
       "openblas"
       "gcc"
+      "tealdeer"
     ];
 
     # `brew install --cask`

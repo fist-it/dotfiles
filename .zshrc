@@ -117,6 +117,7 @@ alias cl=" clear"
 alias tree="tree -a -I '.git'"
 alias ff="fastfetch"
 alias duck="du -hL -d 1 2>/dev/null"
+alias nix-shell="nix-shell --command zsh"
 
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh --cmd cd)"
