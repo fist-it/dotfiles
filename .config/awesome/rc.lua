@@ -321,7 +321,10 @@ globalkeys = gears.table.join(
   --   { description = "run prompt", group = "launcher" }),
 
   awful.key({ modopt }, 'space', function() awful.util.spawn('rofi -show drun') end,
-    { description = 'run rofi', group = 'launcher' }),
+    { description = 'run desktop apps with rofi', group = 'launcher' }),
+
+  awful.key({ modopt }, 'w', function() awful.util.spawn('rofi -show window') end,
+    { description = 'find windows with rofi', group = 'launcher' }),
 
   -- Screenshots tool -- save to ~/screenshots AND copy to clipboard
   awful.key({ modopt, 'Shift' }, 's', function() awful.util.spawn('flameshot gui -c -p ~/screenshots') end,
