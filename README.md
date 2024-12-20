@@ -34,10 +34,13 @@ Tools I'm currently using:
 ### System related
 
 - Linux:
-    - [`i3`](https://i3wm.org/) Window Manager
-    - simple [`scripts`](.config/scripts/)
+    - [`awesome`](https://awesomewm.org/) Window Manager
+    - [`picom`](https://github.com/yshui/picom) X11 compositor
+    - simple [`scripts`](.config/config_scripts/)
     - [`rofi`](https://github.com/davatorium/rofi)
-    - [`polybar`](https://github.com/polybar/polybar)
+    - can't get myself to remove old WM, so:
+        - [`i3`](https://i3wm.org/) Window Manager
+        - [`polybar`](https://github.com/polybar/polybar)
 - MacOS:
     - [`aerospace`](https://github.com/nikitabobko/AeroSpace) Window Manager
     - [`sketchybar`](https://github.com/FelixKratz/SketchyBar) MacOS info bar
@@ -46,7 +49,7 @@ Tools I'm currently using:
 
 ## Editor
 
-I use [`neovim`](https://github.com/neovim/neovim) 0.10 nightly with [`Lazy`](https://github.com/folke/lazy.nvim)
+I use [`neovim`](https://github.com/neovim/neovim) 0.11 nightly with [`Lazy`](https://github.com/folke/lazy.nvim)
 plugin manager.
 
 Configuration: **[`lua`](.config/nvim/)**
@@ -58,19 +61,26 @@ Configuration: **[`lua`](.config/nvim/)**
     - File navigation: [`oil.nvim`](https://github.com/stevearc/oil.nvim)
     - Navigating changes: [`undotree`](https://github.com/mbbill/undotree)
     - Picker: [`Telescope.nvim`](https://github.com/nvim-telescope/telescope.nvim)
+    - quick file navigation: [`harpoon`](https://github.com/ThePrimeagen/harpoon)
 
 - Smaller plugins:
     - Keybinds help: [`Which-key.nvim`](https://github.com/folke/which-key.nvim)
     - Markdown preview: [`Glow.nvim`](https://github.com/ellisonleao/glow.nvim)
-    - Hyperlink navigation: [`gx.nvim`](https://github.com/chrishrb/gx.nvim)
     - Git integration: [`fugitive.vim`](https://github.com/tpope/vim-fugitive)
     - Expanded in/around vim motions: [`mini.ai`](https://github.com/echasnovski/mini.ai)
 
 - Visual plugins:
-    - Colorscheme: [`rose-pine.nvim`](https://github.com/rose-pine/neovim)
-    - Line: [`lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim)
-    - Noice: [`Noice.nvim`](https://github.com/folke/noice.nvim)
-    - Color hex preview: [`nvim-colorizer.lua`](https://github.com/norcalli/nvim-colorizer.lua)
+    - Colorschemes:
+        - [`rose-pine.nvim`](https://github.com/rose-pine/neovim)
+        - [`poimandres.nvim`](https://github.com/olivercederborg/poimandres.nvim)
+    - Status line: [`lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim)
+    - Color preview: [`nvim-colorizer.lua`](https://github.com/norcalli/nvim-colorizer.lua)
+    - Startup screen: [`startup.nvim`](https://github.com/max397574/startup.nvim)
+
+- Debugging and language specific:
+    - [`nvim-dap`](https://github.com/mfussenegger/nvim-dap)
+    - [`nvim-dap-go`](https://github.com/leoluz/nvim-dap-go)
+    - [`rustaceanvim`](https://github.com/mrcjkb/rustaceanvim)
 
 I also use [`mason.nvim`](https://github.com/williamboman/mason.nvim) to download
 and synchronise language servers, linters and formatters.
