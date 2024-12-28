@@ -327,7 +327,7 @@ globalkeys = gears.table.join(
     { description = 'find windows with rofi', group = 'launcher' }),
 
   -- Screenshots tool -- save to ~/screenshots AND copy to clipboard
-  awful.key({ modopt, 'Shift' }, 's', function() awful.util.spawn('flameshot gui -c -p ~/screenshots') end,
+  awful.key({ modcom, 'Shift' }, 's', function() awful.util.spawn('flameshot gui -c -p /home/fist_it/screenshots') end,
     { description = 'take screenshot', group = 'launcher' }),
 
 
@@ -520,10 +520,10 @@ awful.rules.rules = {
   },
 
   -- Set Firefox to always map on the tag named "2" on screen 1.
-  -- {
-  --   rule = { class = "Firefox" },
-  --   properties = { screen = 1, tag = "2" }
-  -- },
+  {
+    rule = { class = browser },
+    properties = { screen = 1, tag = "2" }
+  },
 }
 -- }}}
 
@@ -558,15 +558,16 @@ client.connect_signal("request::titlebars", function(c)
 
   awful.titlebar(c):setup {
     { -- Left
-      awful.titlebar.widget.iconwidget(c),
+      -- awful.titlebar.widget.iconwidget(c),
       buttons = buttons,
       layout  = wibox.layout.fixed.horizontal
     },
+    -- nil,
     {   -- Middle
-      { -- Title
-        align  = "center",
-        widget = awful.titlebar.widget.titlewidget(c)
-      },
+      -- { -- Title
+      --   align  = "center",
+      --   widget = awful.titlebar.widget.titlewidget(c)
+      -- },
       buttons = buttons,
       layout  = wibox.layout.flex.horizontal
     },
@@ -594,5 +595,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Visual changes {{{
 
 beautiful.useless_gap = 2
+beautiful.notification_max_width = 400
+beautiful.notification_max_height = 100
 
 -- }}}
