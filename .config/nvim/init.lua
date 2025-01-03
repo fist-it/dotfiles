@@ -20,7 +20,7 @@ vim.g.mapleader = ' '
 require('lazy').setup({
   spec = {
     import = 'plugins',
-    install = { colorscheme = { "poimandres" } },
+    install = { colorscheme = { "kanagawa" } },
   }
 })
 require('requires')
