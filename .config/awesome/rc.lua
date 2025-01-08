@@ -320,7 +320,10 @@ globalkeys = gears.table.join(
   -- awful.key({ modcom }, "r", function() awful.screen.focused().mypromptbox:run() end,
   --   { description = "run prompt", group = "launcher" }),
 
-  awful.key({ modopt }, 'space', function() awful.util.spawn('rofi -show drun') end,
+  awful.key({ modopt }, 'space', function() awful.util.spawn('/home/fist_it/.config/rofi/launch.sh') end,
+    { description = 'run desktop apps with rofi', group = 'launcher' }),
+
+  awful.key({ modopt }, 'Escape', function() awful.util.spawn('/home/fist_it/.config/rofi/launch_powermenu.sh') end,
     { description = 'run desktop apps with rofi', group = 'launcher' }),
 
   awful.key({ modopt }, 'w', function() awful.util.spawn('rofi -show window') end,
