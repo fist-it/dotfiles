@@ -50,9 +50,6 @@
       "openblas"
       "gcc"
       "tealdeer"
-      "ghc"
-      "ghcup"
-      "haskell-language-server"
     ];
 
     # `brew install --cask`
@@ -99,7 +96,6 @@
     tree-sitter
     wget
     ncurses
-    glow
     zoxide
   ];
 }
