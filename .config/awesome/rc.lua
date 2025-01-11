@@ -300,6 +300,18 @@ globalkeys = gears.table.join(
     { description = "open terminal", group = "launcher" }),
   awful.key({ modopt }, "f", function() awful.spawn(browser) end,
     { description = "open firefox", group = "launcher" }),
+  awful.key({ modopt, "Control" }, "f", function()
+      awful.spawn({ browser, "--private-window" },
+        {
+          tag = mouse.screen.selected_tag,
+          floating = true,
+          fullscreen = false,
+          placement = awful.placement.centered,
+        }
+      )
+    end,
+    { description = "open firefox (private)", group = "launcher" }),
+
 
   -- Media control
   awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%") end,
@@ -322,10 +334,8 @@ globalkeys = gears.table.join(
 
   awful.key({ modopt }, 'space', function() awful.util.spawn('/home/fist_it/.config/rofi/launch.sh') end,
     { description = 'run desktop apps with rofi', group = 'launcher' }),
-
   awful.key({ modopt }, 'Escape', function() awful.util.spawn('/home/fist_it/.config/rofi/launch_powermenu.sh') end,
     { description = 'run desktop apps with rofi', group = 'launcher' }),
-
   awful.key({ modopt }, 'w', function() awful.util.spawn('rofi -show window') end,
     { description = 'find windows with rofi', group = 'launcher' }),
 
@@ -356,14 +366,26 @@ clientkeys = gears.table.join(
       c:raise()
     end,
     { description = "toggle fullscreen", group = "client" }),
+
+  -- Move to the corresponding tag on the next screen
+  awful.key({ modopt, "Control" }, "w", function(c)
+      local next_scr = awful.screen.focused():get_next_in_direction('right') or
+      awful.screen.focused():get_next_in_direction("left")
+      if next_scr then
+        c:move_to_screen(next_scr)
+        c:move_to_tag(next_scr.tags[c.first_tag.index])
+        next_scr.tags[c.first_tag.index]:view_only()
+      end
+    end,
+    { description = "move to screen", group = "client" }),
+
+
   awful.key({ modcom }, "q", function(c) c:kill() end,
     { description = "close", group = "client" }),
   awful.key({ modcom, "Control" }, "space", awful.client.floating.toggle,
     { description = "toggle floating", group = "client" }),
   awful.key({ modcom, "Control" }, "Return", function(c) c:swap(awful.client.getmaster()) end,
     { description = "move to master", group = "client" }),
-  awful.key({ modopt, "Control" }, "w", function(c) c:move_to_screen() end,
-    { description = "move to screen", group = "client" }),
   awful.key({ modcom, }, "t", function(c) c.ontop = not c.ontop end,
     { description = "toggle keep on top", group = "client" }),
   awful.key({ modcom, }, "n",
@@ -527,6 +549,14 @@ awful.rules.rules = {
     rule = { class = browser },
     properties = { screen = 1, tag = "2" }
   },
+  {
+    rule = { class = "Spotify" },
+    properties = { screen = 1, tag = "3" }
+  },
+  {
+    rule = { class = "vesktop" },
+    properties = { screen = 1, tag = "4" }
+  },
 }
 -- }}}
 
@@ -566,7 +596,7 @@ client.connect_signal("request::titlebars", function(c)
       layout  = wibox.layout.fixed.horizontal
     },
     -- nil,
-    {   -- Middle
+    { -- Middle
       -- { -- Title
       --   align  = "center",
       --   widget = awful.titlebar.widget.titlewidget(c)
