@@ -107,24 +107,6 @@ return {
       }
     })
 
-    local lspconfig = require 'lspconfig'
-    local configs = require 'lspconfig.configs'
-
-    if not configs.als then
-      configs.als = {
-        capabilities = lsp_capabilities,
-        default_config = {
-          cmd = { 'ada_language_server' },
-          root_dir = lspconfig.util.root_pattern('*.gpr'),
-          filetypes = { 'adb', 'ada' },
-        },
-      }
-    end
-    lspconfig.als.setup {}
-
-
-
-
     local cmp = require('cmp')
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
