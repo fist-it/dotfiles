@@ -370,7 +370,7 @@ clientkeys = gears.table.join(
   -- Move to the corresponding tag on the next screen
   awful.key({ modopt, "Control" }, "w", function(c)
       local next_scr = awful.screen.focused():get_next_in_direction('right') or
-      awful.screen.focused():get_next_in_direction("left")
+          awful.screen.focused():get_next_in_direction("left")
       if next_scr then
         c:move_to_screen(next_scr)
         c:move_to_tag(next_scr.tags[c.first_tag.index])
@@ -630,5 +630,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 beautiful.useless_gap = 2
 beautiful.notification_max_width = 400
 beautiful.notification_max_height = 100
+beautiful.notification_icon_size = 90
+
 
 -- }}}
