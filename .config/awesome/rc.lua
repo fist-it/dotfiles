@@ -2,6 +2,7 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
+
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -17,6 +18,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
+
 
 -- autostart necessary applications
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
@@ -123,6 +125,12 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
+-- Create a spotify widget
+
+
+-- Create a volume widget
+local volume_widget = require('awesome-wm-widgets.pactl-widget.volume')
+
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
   awful.button({}, 1, function(t) t:view_only() end),
@@ -184,7 +192,7 @@ awful.screen.connect_for_each_screen(function(s)
 
 
   -- Create the wibox
-  s.mywibox = awful.wibar({ position = "top", screen = s })
+  s.mywibox = awful.wibar({ position = "top", screen = s, bg = beautiful.bg_normal .. "00" })
 
   -- Add widgets to the wibox
   s.mywibox:setup {
@@ -193,14 +201,20 @@ awful.screen.connect_for_each_screen(function(s)
       layout = wibox.layout.fixed.horizontal,
       mylauncher,
       s.mytaglist,
-      s.mypromptbox,
     },
-    nil,
+    {
+      layout = wibox.layout.fixed.horizontal,
+      wibox.widget.textbox(" | "),
+      volume_widget()
+
+    },
     { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
       mykeyboardlayout,
-      wibox.widget.systray(),
+      -- wibox.widget.systray(),
+      wibox.widget.textbox(" | "),
       mytextclock,
+      wibox.widget.textbox(" | "),
       s.mylayoutbox,
     },
   }
@@ -225,6 +239,7 @@ globalkeys = gears.table.join(
     { description = "view next", group = "tag" }),
   awful.key({ modcom, }, "Escape", awful.tag.history.restore,
     { description = "go back", group = "tag" }),
+
 
   awful.key({ modopt, }, "j",
     function()
@@ -306,7 +321,6 @@ globalkeys = gears.table.join(
           tag = mouse.screen.selected_tag,
           floating = true,
           fullscreen = false,
-          placement = awful.placement.centered,
         }
       )
     end,
@@ -314,12 +328,9 @@ globalkeys = gears.table.join(
 
 
   -- Media control
-  awful.key({}, "XF86AudioRaiseVolume", function() awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%") end,
-    { description = "raise volume", group = "media" }),
-  awful.key({}, "XF86AudioLowerVolume", function() awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%") end,
-    { description = "lower volume", group = "media" }),
-  awful.key({}, "XF86AudioMute", function() awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") end,
-    { description = "mute volume", group = "media" }),
+  awful.key({}, "XF86AudioRaiseVolume", function() volume_widget:inc(5) end),
+  awful.key({}, "XF86AudioLowerVolume", function() volume_widget:dec(5) end),
+  awful.key({}, "XF86AudioMute", function() volume_widget:toggle() end),
   awful.key({}, "XF86AudioPlay", function() awful.spawn("playerctl play-pause") end,
     { description = "play/pause media", group = "media" }),
   awful.key({}, "XF86AudioNext", function() awful.spawn("playerctl next") end,
@@ -571,6 +582,22 @@ client.connect_signal("manage", function(c)
     -- Prevent clients from being unreachable after screen count changes.
     awful.placement.no_offscreen(c)
   end
+end)
+
+client.connect_signal("property::floating", function(c)
+    if c.floating then
+        c.ontop = true
+        local g = c:geometry()
+        local s = c.screen.workarea
+        g.width = s.width * 0.6
+        g.height = s.height * 0.6
+        g.x = s.x + (s.width - g.width) / 2
+        g.y = s.y + (s.height - g.height) / 2
+
+        c:geometry(g)
+    else
+        c.ontop = false
+    end
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
