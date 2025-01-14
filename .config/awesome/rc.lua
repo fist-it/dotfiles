@@ -587,6 +587,8 @@ end)
 client.connect_signal("property::floating", function(c)
     if c.floating then
         c.ontop = true
+        -- hide floating client titlebar
+        awful.titlebar.hide(c)
         local g = c:geometry()
         local s = c.screen.workarea
         g.width = s.width * 0.6
@@ -596,7 +598,8 @@ client.connect_signal("property::floating", function(c)
 
         c:geometry(g)
     else
-        c.ontop = false
+      awful.titlebar.show(c)
+      c.ontop = false
     end
 end)
 
