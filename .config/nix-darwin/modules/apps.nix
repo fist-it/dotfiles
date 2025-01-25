@@ -1,9 +1,5 @@
 {pkgs, ...}: {
-  ##########################################################################
-  # Install all apps and packages here.
-  #
-  #  NOTE: Your can find all available options in:
-  #    https://daiderd.com/nix-darwin/manual/index.html
+  ########################################################################## Install all apps and packages here. NOTE: Your can find all available options in: https://daiderd.com/nix-darwin/manual/index.html
   #
   ##########################################################################
 
@@ -66,6 +62,7 @@
       "iina"
       "hiddenbar"
       "vlc"
+      "anki"
     ];
   };
 
