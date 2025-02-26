@@ -50,6 +50,10 @@ brew      "tree-sitter"
 brew      "wget"
 brew      "ncurses"
 brew      "zoxide"
+brew      "node"
+brew      "npm"
+brew      "pnpm"
+brew      "openjdk"
 
 
 cask      "firefox@developer-edition"
