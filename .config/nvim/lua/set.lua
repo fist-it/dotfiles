@@ -9,6 +9,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
+vim.opt.conceallevel = 1
+
 vim.opt.updatetime = 100
 
 vim.opt.nu = true

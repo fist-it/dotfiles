@@ -229,6 +229,21 @@ root.buttons(gears.table.join(
 ))
 -- }}}
 
+-- Spawn floating, sticky clients for quick access
+---@param cmd table with command and arguments
+function spawnFastClient(cmd)
+    awful.spawn(cmd, {
+        tag = mouse.screen.selected_tag,
+        floating = true,
+        fullscreen = false,
+        maximized = false,
+        ontop = true,
+        sticky = true,
+        skip_taskbar = true,
+        raise = true
+    })
+end
+
 -- {{{ Key bindings
 globalkeys = gears.table.join(
   awful.key({ modcom, }, "s", hotkeys_popup.show_help,
@@ -315,17 +330,17 @@ globalkeys = gears.table.join(
     { description = "open terminal", group = "launcher" }),
   awful.key({ modopt }, "f", function() awful.spawn(browser) end,
     { description = "open firefox", group = "launcher" }),
-  awful.key({ modopt, "Control" }, "f", function()
-      awful.spawn({ browser, "--private-window" },
-        {
-          tag = mouse.screen.selected_tag,
-          floating = true,
-          fullscreen = false,
-        }
-      )
-    end,
-    { description = "open firefox (private)", group = "launcher" }),
 
+  -- fast floating apps
+  awful.key({ modopt, "Control" }, "f", function()
+        spawnFastClient({browser, "--private-window"})
+    end,
+    { description = "open floating firefox (private)", group = "launcher" }),
+
+  awful.key({ modopt, "Control" }, "t", function()
+        spawnFastClient({terminal})
+    end,
+    { description = "open floating terminal", group = "launcher" }),
 
   -- Media control
   awful.key({}, "XF86AudioRaiseVolume", function() volume_widget:inc(5) end),
@@ -506,7 +521,7 @@ awful.rules.rules = {
       keys = clientkeys,
       buttons = clientbuttons,
       screen = awful.screen.preferred,
-      placement = awful.placement.no_overlap + awful.placement.no_offscreen
+      placement = awful.placement.no_overlap + awful.placement.no_offscreen,
     }
   },
 
@@ -659,6 +674,5 @@ beautiful.useless_gap = 2
 beautiful.notification_max_width = 400
 beautiful.notification_max_height = 100
 beautiful.notification_icon_size = 90
-
 
 -- }}}
