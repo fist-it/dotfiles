@@ -18,7 +18,8 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
-
+local local-apps = require("local-apps")
+local default-apps = require("default-apps")
 
 -- autostart necessary applications
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
@@ -57,11 +58,20 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
 editor = os.getenv("EDITOR") or "nvim"
-editor_cmd = terminal .. " -e " .. editor
+terminal = "kitty"
 
-browser = "firefox-developer-edition"
+-- TODO: expand this template to each app, including editor and terminal
+-- for item in default apps, if item non existent in local-apps
+-- local-apps.item = default-apps.item, then the proper variable for apps will
+-- be the local one
+if apps.browser then
+  browser = local-apps.browser
+else
+  browser = default-apps.browser
+end
+
+editor_cmd = terminal .. " -e " .. editor
 
 -- Default modcom.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
