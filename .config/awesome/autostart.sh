@@ -8,7 +8,7 @@ run() {
 
 run "xset" s on
 run "xset" s 300
-run "xautolock" -time 4 -corners +-+- -cornersize 30 -locker ~/.config/config_scripts/lock.sh
+run "xautolock" -time 4 -corners ++++ -cornersize 30 -locker ~/.config/config_scripts/lock.sh
 run "/home/fist_it/.config/config_scripts/double-xrandr.sh" normal
 run "openrgb" -p basic
 run "nvfancontrol"
