@@ -6,7 +6,7 @@
 
 after-login-command = [
   "exec-and-forget sketchybar",
-  "exec-and-forget open -a raycast",
+  # "exec-and-forget open -a raycast",
   "exec-and-forget orb",
 ]
 
@@ -96,7 +96,7 @@ PATH = '/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}'
 
 # You can uncomment this line to open up terminal with alt + enter shortcut
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-alt-t = 'exec-and-forget open -n -a kitty'
+alt-t = 'exec-and-forget open -n -a ghostty'
 alt-f = 'exec-and-forget open -n -a Firefox\ Developer\ Edition'
 keypadMinus = 'exec-and-forget aerospace reload-config'
 keypad1 = 'exec-and-forget open -n -a Spotify'
