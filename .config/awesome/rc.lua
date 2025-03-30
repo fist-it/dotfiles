@@ -18,8 +18,8 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
-local local-apps = require("local-apps")
-local default-apps = require("default-apps")
+-- local local-apps = require("local-apps")
+-- local default-apps = require("default-apps")
 
 -- autostart necessary applications
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
@@ -65,11 +65,12 @@ terminal = "kitty"
 -- for item in default apps, if item non existent in local-apps
 -- local-apps.item = default-apps.item, then the proper variable for apps will
 -- be the local one
-if apps.browser then
-  browser = local-apps.browser
-else
-  browser = default-apps.browser
-end
+-- if apps.browser then
+--   browser = local-apps.browser
+-- else
+--   browser = default-apps.browser
+-- end
+browser = "firefox-developer-edition"
 
 editor_cmd = terminal .. " -e " .. editor
 
@@ -169,7 +170,7 @@ local function set_wallpaper(s)
     if type(wallpaper) == "function" then
       wallpaper = wallpaper(s)
     end
-    gears.wallpaper.maximized(wallpaper, s, true)
+    gears.wallpaper.set(wallpaper, s, true)
   end
 end
 
