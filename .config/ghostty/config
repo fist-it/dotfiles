@@ -1,0 +1,18 @@
+
+shell-integration=zsh
+
+
+foreground = #dcd7ba
+background = #1f1f28
+selection-foreground = #c8c093
+selection-background = #2d4f67
+macos-titlebar-style = transparent
+
+font-family = Hack Nerd Font
+font-size = 18.0
+
+theme = kanagawabones
+
+background-opacity = 0.97
+background-blur-radius = 20
+
