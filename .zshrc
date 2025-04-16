@@ -114,6 +114,7 @@ alias tree="tree -a -I '.git'"
 alias ff="fastfetch"
 alias duck="du -hL -d 1 2>/dev/null"
 alias nix-shell="nix-shell --command zsh"
+alias matlab="/Applications/MATLAB_R2024b.app/bin/matlab -nodesktop"
 
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh --cmd cd)"
@@ -140,5 +141,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --border="rounded" --border-label="fist" --border-label-pos="0" --preview-window="border-rounded"
   --prompt="∮" --marker=">" --pointer="◆" --separator="─"
   --scrollbar="│" --info="right"'
+
 
 export PATH=$PATH:/Users/fist_it/.spicetify
