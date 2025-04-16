@@ -9,7 +9,9 @@ vim.api.nvim_set_keymap('c', '<C-k>', '<Up>', { noremap = true })
 vim.api.nvim_set_keymap('c', '<C-l>', '<Right>', { noremap = true })
 
 -- step out from current file to oil
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "-", function ()
+  require("oil").open()
+end, { desc = "Open parent directory" })
 
 -- merge line bellow with current without moving the cursor
 vim.keymap.set("n", "J", "mzJ`z")
