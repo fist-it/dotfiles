@@ -112,17 +112,26 @@ alias la="ls -a"
 alias cl=" clear"
 alias tree="tree -a -I '.git'"
 alias ff="fastfetch"
-alias duck="du -hL -d 1 2>/dev/null"
-alias nix-shell="nix-shell --command zsh"
-alias matlab="/Applications/MATLAB_R2024b.app/bin/matlab -nodesktop"
+
+if command -v nvim &> /dev/null; then
+  alias vim="nvim"
+  alias vi="nvim"
+  alias v="nvim"
+fi
+
+if ! command -v matlab &> /dev/null; then
+  alias matlab="/Applications/MATLAB_R2024b.app/bin/matlab"
+fi
+
+alias mat="matlab -nodesktop -nosplash"
 
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh --cmd cd)"
 fi
-
 if command -v fzf &> /dev/null; then
   eval "$(fzf --zsh)"
 fi
+
 
 # excluding listing directories and changint them from zsh history
 setopt hist_ignore_space
@@ -132,6 +141,8 @@ alias cd=" cd"
 if command -v pyenv 1> /dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+alias init-pyenv="cp ~/.config/config_scripts/py_activate_env.sh .env && source ./.venv/bin/activate"
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:#d0d0d0,fg+:#d0d0d0,bg:-1,bg+:#262626
