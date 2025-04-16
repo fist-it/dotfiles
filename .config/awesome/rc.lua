@@ -160,7 +160,9 @@ local taglist_buttons = gears.table.join(
   awful.button({}, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
 
-beautiful.wallpaper = "/home/fist_it/.local/wallpapers/tapeta_gory.jpg"
+-- beautiful.wallpaper = function()
+--   awful.spawn.with_shell("~/.config/config_scripts/wallpaper.sh")
+-- end
 
 local function set_wallpaper(s)
   -- Wallpaper
@@ -243,16 +245,16 @@ root.buttons(gears.table.join(
 -- Spawn floating, sticky clients for quick access
 ---@param cmd table with command and arguments
 function spawnFastClient(cmd)
-    awful.spawn(cmd, {
-        tag = mouse.screen.selected_tag,
-        floating = true,
-        fullscreen = false,
-        maximized = false,
-        ontop = true,
-        sticky = true,
-        skip_taskbar = true,
-        raise = true
-    })
+  awful.spawn(cmd, {
+    tag = mouse.screen.selected_tag,
+    floating = true,
+    fullscreen = false,
+    maximized = false,
+    ontop = true,
+    sticky = true,
+    skip_taskbar = true,
+    raise = true
+  })
 end
 
 -- {{{ Key bindings
@@ -344,12 +346,11 @@ globalkeys = gears.table.join(
 
   -- fast floating apps
   awful.key({ modopt, "Control" }, "f", function()
-        spawnFastClient({browser, "--private-window"})
+      spawnFastClient({ browser, "--private-window" })
     end,
     { description = "open floating firefox (private)", group = "launcher" }),
-
   awful.key({ modopt, "Control" }, "t", function()
-        spawnFastClient({terminal})
+      spawnFastClient({ terminal })
     end,
     { description = "open floating terminal", group = "launcher" }),
 
@@ -576,7 +577,7 @@ awful.rules.rules = {
   {
     rule_any = { type = { "normal", "dialog" }
     },
-    properties = { titlebars_enabled = true }
+    properties = { titlebars_enabled = false }
   },
 
   -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -611,22 +612,22 @@ client.connect_signal("manage", function(c)
 end)
 
 client.connect_signal("property::floating", function(c)
-    if c.floating then
-        c.ontop = true
-        -- hide floating client titlebar
-        awful.titlebar.hide(c)
-        local g = c:geometry()
-        local s = c.screen.workarea
-        g.width = s.width * 0.6
-        g.height = s.height * 0.6
-        g.x = s.x + (s.width - g.width) / 2
-        g.y = s.y + (s.height - g.height) / 2
+  if c.floating then
+    c.ontop = true
+    -- hide floating client titlebar
+    awful.titlebar.hide(c)
+    local g = c:geometry()
+    local s = c.screen.workarea
+    g.width = s.width * 0.6
+    g.height = s.height * 0.6
+    g.x = s.x + (s.width - g.width) / 2
+    g.y = s.y + (s.height - g.height) / 2
 
-        c:geometry(g)
-    else
-      awful.titlebar.show(c)
-      c.ontop = false
-    end
+    c:geometry(g)
+  else
+    awful.titlebar.show(c)
+    c.ontop = false
+  end
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
