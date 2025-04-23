@@ -70,7 +70,7 @@ terminal = "kitty"
 -- else
 --   browser = default-apps.browser
 -- end
-browser = "firefox-developer-edition"
+browser = "firefox"
 
 editor_cmd = terminal .. " -e " .. editor
 

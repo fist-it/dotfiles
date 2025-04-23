@@ -13,5 +13,6 @@ run "xautolock" -time 4 -corners ---- -cornersize 30 -locker ~/.config/config_sc
 run "/home/fist_it/.config/config_scripts/screenlayout.sh"
 run "openrgb" -p basic
 run "nvfancontrol"
+setxkbmap -layout us,pl -option grp:alt_shift_toggle&
 run "picom"
 # run "polybar"
