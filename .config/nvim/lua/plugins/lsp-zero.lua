@@ -1,13 +1,13 @@
 return {
   'VonHeikemen/lsp-zero.nvim',
-  branch = 'v1.x',
+  branch = 'v3.x',
 
   -- dependencies {{{
   dependencies = {
     -- LSP Support
     { 'neovim/nvim-lspconfig' },
-    { 'williamboman/mason.nvim' },
-    { 'williamboman/mason-lspconfig.nvim' },
+    { 'mason-org/mason.nvim' },
+    { 'mason-org/mason-lspconfig.nvim' },
 
     -- Autocompletion
     { 'hrsh7th/nvim-cmp' },
@@ -18,7 +18,7 @@ return {
     { 'hrsh7th/cmp-nvim-lua' },
 
     -- Snippets
-    { 'L3MON4D3/LuaSnip',                 run = "make install_jsregexp" },
+    { 'L3MON4D3/LuaSnip',              run = "make install_jsregexp" },
     { 'rafamadriz/friendly-snippets' },
   },
   -- }}}
@@ -63,6 +63,10 @@ return {
     })
     -- }}}
 
+    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+      vim.lsp.handlers.hover,
+      { border = 'rounded' }
+    )
 
     local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -107,32 +111,22 @@ return {
       }
     })
 
-    local cmp = require('cmp')
-    local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
     -- this is the function that loads the extra snippets to luasnip
     -- from rafamadriz/friendly-snippets
     require('luasnip.loaders.from_vscode').lazy_load()
 
+    local cmp = require('cmp')
+
     cmp.setup({
       sources = {
-        { name = 'path' },
         { name = 'nvim_lsp' },
-        { name = 'luasnip', keyword_length = 2 },
       },
-      mapping = cmp.mapping.preset.insert({
-        ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<C-Space>'] = cmp.mapping.confirm({ select = true }),
-      }),
       snippet = {
         expand = function(args)
           require('luasnip').lsp_expand(args.body)
         end,
       },
-    })
-    lsp.setup_nvim_cmp({
-      mapping = cmp.mappings
+      mapping = cmp.mapping.preset.insert({}),
     })
 
     lsp.setup()
