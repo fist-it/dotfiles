@@ -155,3 +155,4 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 
 
 export PATH=$PATH:/Users/fist_it/.spicetify
+export PATH=$PATH:/Users/fist_it/.ghcup/bin
