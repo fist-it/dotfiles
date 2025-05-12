@@ -154,5 +154,5 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --scrollbar="│" --info="right"'
 
 
-export PATH=$PATH:/Users/fist_it/.spicetify
-export PATH=$PATH:/Users/fist_it/.ghcup/bin
+export PATH=$PATH:~/.spicetify
+export PATH=$PATH:~/.ghcup/bin
