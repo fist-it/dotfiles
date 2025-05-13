@@ -5,7 +5,6 @@ return {
       type = "float",
       position = "right",
       border = "single",
-
     }
   },
   cmd = "Trouble",

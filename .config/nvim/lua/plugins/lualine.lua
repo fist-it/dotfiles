@@ -29,7 +29,7 @@ return {
             color = { fg = "#e0def4" },
           }
         },
-        lualine_c = { 'copilot' }, -- 'buffers'
+        lualine_c = {},
         lualine_x = { 'filetype' },
         lualine_y = { 'hostname', 'diagnostics' },
         lualine_z = { 'selectioncount' }
