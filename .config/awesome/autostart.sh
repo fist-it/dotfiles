@@ -8,7 +8,6 @@ run() {
 
 run "xset" s on
 run "xset" s 300
-feh --bg-fill /home/fist_it/.local/wallpapers/tapeta_gory.jpg&
 run "xautolock" -time 4 -corners ---- -cornersize 30 -locker ~/.config/config_scripts/lock.sh
 # run "/home/fist_it/.config/config_scripts/screenlayout.sh"
 run "/home/fist_it/.config/config_scripts/double-xrandr.sh" normal

@@ -160,9 +160,9 @@ local taglist_buttons = gears.table.join(
   awful.button({}, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
 
--- beautiful.wallpaper = function()
---   awful.spawn.with_shell("~/.config/config_scripts/wallpaper.sh")
--- end
+beautiful.wallpaper = function()
+  return gears.filesystem.get_configuration_dir() .. "wallpapers/mountains_mono.jpg"
+end
 
 local function set_wallpaper(s)
   -- Wallpaper
@@ -172,7 +172,7 @@ local function set_wallpaper(s)
     if type(wallpaper) == "function" then
       wallpaper = wallpaper(s)
     end
-    gears.wallpaper.set(wallpaper, s, true)
+    gears.wallpaper.maximized(wallpaper, nil, true)
   end
 end
 
@@ -629,6 +629,7 @@ client.connect_signal("property::floating", function(c)
     c.ontop = false
   end
 end)
+
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
