@@ -95,6 +95,8 @@ return {
           end,
         }
       })
+
+      -- require("lspconfig").matlab_ls.setup({})
     end
   },
 
@@ -130,7 +132,7 @@ return {
     config = function()
       require('lspsaga').setup({
         lightbulb = {
-          enable = true,
+          enable = false,
           sign = false,
           virtual_text = true,
         },
