@@ -113,12 +113,6 @@ alias cl=" clear"
 alias tree="tree -a -I '.git'"
 alias ff="fastfetch"
 
-if command -v nvim &> /dev/null; then
-  alias vim="nvim"
-  alias vi="nvim"
-  alias v="nvim"
-fi
-
 if ! command -v matlab &> /dev/null; then
   alias matlab="/Applications/MATLAB_R2024b.app/bin/matlab"
 fi
