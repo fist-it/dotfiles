@@ -24,7 +24,7 @@ return {
       { 'mason-org/mason-lspconfig.nvim' },
     },
     init = function()
-      vim.opt.signcolumn = 'yes'
+      -- vim.opt.signcolumn = 'yes'
     end,
     config = function()
       local lsp_defaults = require('lspconfig').util.default_config
@@ -57,11 +57,11 @@ return {
             { desc = "go to next diagnostic", buffer = event.buf })
           vim.keymap.set('n', ']d', function() vim.diagnostic.goto_prev() end,
             { desc = "go to previous diagnostic", buffer = event.buf })
-          vim.keymap.set('n', '<leader>vca', function() vim.lsp.buf.code_action() end,
-            { desc = "code action (?)", buffer = event.buf })
-          vim.keymap.set('n', '<leader>vrr', function() vim.lsp.buf.references() end,
+          vim.keymap.set('n', '<leader>ca', function() vim.lsp.buf.code_action() end,
+            { desc = "code action", buffer = event.buf })
+          vim.keymap.set('n', '<leader>rf', function() vim.lsp.buf.references() end,
             { desc = "view references", buffer = event.buf })
-          vim.keymap.set('n', '<leader>vrn', function() vim.lsp.buf.rename() end,
+          vim.keymap.set('n', '<leader>rn', function() vim.lsp.buf.rename() end,
             { desc = "rename variable", buffer = event.buf })
           vim.keymap.set({ 'n', 'i' }, '<C-h>', function() vim.lsp.buf.signature_help() end,
             { desc = "signature help", buffer = event.buf })
