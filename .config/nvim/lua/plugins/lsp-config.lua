@@ -93,6 +93,29 @@ return {
           function(server_name)
             require('lspconfig')[server_name].setup({})
           end,
+          texlab = {
+            bibtexFormatter = "texlab",
+            build = {
+              args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+              executable = "latexmk",
+              forwardSearchAfter = false,
+              onSave = false
+            },
+            chktex = {
+              onEdit = false,
+              onOpenAndSave = false
+            },
+            diagnosticsDelay = 300,
+            formatterLineLength = 80,
+            forwardSearch = {
+              args = {}
+            },
+            latexFormatter = "tex-fmt",
+            latexindent = {
+              modifyLineBreaks = false
+            }
+          }
+
         }
       })
 
