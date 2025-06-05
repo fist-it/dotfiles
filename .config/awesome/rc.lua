@@ -590,7 +590,12 @@ awful.rules.rules = {
     properties = { screen = 1, tag = "3" }
   },
   {
-    rule = { class = "vesktop" },
+    rule_any = {
+      class = {
+        "vesktop",
+        "discord",
+      }
+    },
     properties = { screen = 1, tag = "4" }
   },
 }
