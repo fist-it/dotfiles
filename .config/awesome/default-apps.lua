@@ -1,4 +1,4 @@
 return {
-  browser = "firefox-developer-edition",
+  browser = "firefox",
   terminal = "kitty"
 }
