@@ -25,10 +25,9 @@ Tools I'm currently using:
 - prompt: [`pure prompt`](https://github.com/sindresorhus/pure)
 - Terminal emulator: [`kitty`](https://sw.kovidgoyal.net/kitty/) ([config](.config/kitty/kitty.conf))
 - navigation: cd replaced by [`zoxide`](https://github.com/ajeetdsouza/zoxide)
-- [`fzf`](https://github.com/junegunn/fzf) ([config](.zshrc#L139) in
-  zsh)
 - system information: [`fastfetch`](https://github.com/fastfetch-cli/fastfetch)
 ([config](.config/fastfetch/config.jsonc))
+- pdf-viewer: [Sioyek](https://github.com/ahrm/sioyek)
 - [`ripgrep`](https://github.com/BurntSushi/ripgrep)
 
 ### System related
@@ -38,9 +37,7 @@ Tools I'm currently using:
     - [`picom`](https://github.com/yshui/picom) X11 compositor
     - simple [`scripts`](.config/config_scripts/)
     - [`rofi`](https://github.com/davatorium/rofi)
-    - can't get myself to remove old WM, so:
-        - [`i3`](https://i3wm.org/) Window Manager
-        - [`polybar`](https://github.com/polybar/polybar)
+    - [dysk](https://github.com/Canop/dysk)
 - MacOS:
     - [`aerospace`](https://github.com/nikitabobko/AeroSpace) Window Manager
     - [`sketchybar`](https://github.com/FelixKratz/SketchyBar) MacOS info bar
@@ -49,7 +46,7 @@ Tools I'm currently using:
 
 ## Editor
 
-I use [`neovim`](https://github.com/neovim/neovim) 0.11 nightly with [`Lazy`](https://github.com/folke/lazy.nvim)
+I use [`neovim`](https://github.com/neovim/neovim) 0.12 nightly with [`Lazy`](https://github.com/folke/lazy.nvim)
 plugin manager.
 
 Configuration: **[`lua`](.config/nvim/)**
@@ -73,6 +70,7 @@ Configuration: **[`lua`](.config/nvim/)**
     - Colorschemes:
         - [`rose-pine.nvim`](https://github.com/rose-pine/neovim)
         - [`poimandres.nvim`](https://github.com/olivercederborg/poimandres.nvim)
+        - [`kanagawa.nvim`](https://github.com/rebelot/kanagawa.nvim)
     - Status line: [`lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim)
     - Color preview: [`nvim-colorizer.lua`](https://github.com/norcalli/nvim-colorizer.lua)
     - Startup screen: [`startup.nvim`](https://github.com/max397574/startup.nvim)
@@ -81,6 +79,8 @@ Configuration: **[`lua`](.config/nvim/)**
     - [`nvim-dap`](https://github.com/mfussenegger/nvim-dap)
     - [`nvim-dap-go`](https://github.com/leoluz/nvim-dap-go)
     - [`rustaceanvim`](https://github.com/mrcjkb/rustaceanvim)
+    - [`VimTeX`](https://github.com/lervag/vimtex)
+    - [`obsidian.nvim`](https://github.com/epwalsh/obsidian.nvim)
 
 I also use [`mason.nvim`](https://github.com/williamboman/mason.nvim) to download
 and synchronise language servers, linters and formatters.
