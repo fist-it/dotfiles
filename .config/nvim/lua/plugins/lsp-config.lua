@@ -14,6 +14,9 @@ return {
     config = false,
   },
   {
+    'Saghen/blink.cmp',
+  },
+  {
     'neovim/nvim-lspconfig',
     pin = true,
     cmd = { "LspInfo", "LspStart", "LspStop" },
