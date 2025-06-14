@@ -203,6 +203,13 @@ awful.screen.connect_for_each_screen(function(s)
     buttons = taglist_buttons
   }
 
+  s.padding = {
+    left = 20,
+    right = 20,
+    top = 20,
+    bottom = 20
+  }
+
 
   -- Create the wibox
   s.mywibox = awful.wibar({ position = "top", screen = s, bg = beautiful.bg_normal .. "00" })
@@ -343,6 +350,9 @@ globalkeys = gears.table.join(
     { description = "open terminal", group = "launcher" }),
   awful.key({ modopt }, "f", function() awful.spawn(browser) end,
     { description = "open firefox", group = "launcher" }),
+
+  awful.key({ modopt, "Shift" }, "f", function() awful.spawn("qutebrowser") end,
+    { description = "open qutebrowser", group = "launcher" }),
 
   -- fast floating apps
   awful.key({ modopt, "Control" }, "f", function()
@@ -608,9 +618,9 @@ client.connect_signal("manage", function(c)
   -- i.e. put it at the end of others instead of setting it master.
   -- if not awesome.startup then awful.client.setslave(c) end
 
-  c.shape = function(cr, w, h)
-    gears.shape.rounded_rect(cr, w, h, 10)
-  end
+  -- c.shape = function(cr, w, h)
+  --   gears.shape.rounded_rect(cr, w, h, 10)
+  -- end
   if awesome.startup
       and not c.size_hints.user_position
       and not c.size_hints.program_position then
