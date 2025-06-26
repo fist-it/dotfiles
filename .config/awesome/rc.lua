@@ -350,8 +350,7 @@ globalkeys = gears.table.join(
     { description = "open terminal", group = "launcher" }),
   awful.key({ modopt }, "f", function() awful.spawn(browser) end,
     { description = "open firefox", group = "launcher" }),
-
-  awful.key({ modopt, "Shift" }, "f", function() awful.spawn("qutebrowser") end,
+  awful.key({ modopt, "Shift" }, "f", function() spawnFastClient({ "qutebrowser" }) end,
     { description = "open qutebrowser", group = "launcher" }),
 
   -- fast floating apps
@@ -636,10 +635,10 @@ client.connect_signal("property::floating", function(c)
     awful.titlebar.hide(c)
     local g = c:geometry()
     local s = c.screen.workarea
-    g.width = s.width * 0.6
-    g.height = s.height * 0.6
-    g.x = s.x + (s.width - g.width) / 2
-    g.y = s.y + (s.height - g.height) / 2
+    g.width = s.width * 0.7
+    g.height = s.height * 0.7
+    g.x = s.x + (s.width - g.width) / 3
+    g.y = s.y + (s.height - g.height) / 3
 
     c:geometry(g)
   else
