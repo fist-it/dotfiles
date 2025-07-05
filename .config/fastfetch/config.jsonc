@@ -3,16 +3,23 @@
   "display": {
     "brightColor": true
   },
+  // "logo": {
+  //   // "source": "~/.config/fastfetch/art.txt",
+  //   //"width": 40,
+  //   //"height": 40,
+  //   //"preserveAspectRatio": true,
+  //   "color": {},
+  //   "type": "small",
+  //   "padding": {
+  //     "top": 2
+  //   }
+  // },
   "logo": {
-    // "source": "~/.config/fastfetch/art.txt",
-    //"width": 40,
-    //"height": 40,
-    //"preserveAspectRatio": true,
-    "color": {},
-    "type": "small",
-    "padding": {
-      "top": 2
-    }
+    "source": "~/.dotfiles/.config/fastfetch/joker.bin",
+    "type": "raw",
+    "preserveAspectRatio": true,
+    "width": 20,
+    "height": 20,
   },
   "modules": [
     "title",
