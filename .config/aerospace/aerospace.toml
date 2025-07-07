@@ -49,15 +49,15 @@ default-root-container-orientation = 'auto'
 key-mapping.preset = 'qwerty'
 
 [workspace-to-monitor-force-assignment]
-11 = 'secondary'
-12 = 'secondary'
-13 = 'secondary'
-14 = 'secondary'
-15 = 'secondary'
-16 = 'secondary'
-17 = 'secondary'
-18 = 'secondary'
-19 = 'secondary'
+s1 = 'secondary'
+s2 = 'secondary'
+s3 = 'secondary'
+s4 = 'secondary'
+s5 = 'secondary'
+s6 = 'secondary'
+s7 = 'secondary'
+s8 = 'secondary'
+s9 = 'secondary'
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
