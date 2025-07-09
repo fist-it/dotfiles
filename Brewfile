@@ -54,6 +54,7 @@ brew      "node"
 brew      "npm"
 brew      "pnpm"
 brew      "openjdk"
+brew      "lazygit"
 
 
 cask      "firefox@developer-edition"
@@ -70,3 +71,5 @@ cask      "hiddenbar"
 cask      "vlc"
 cask      "anki"
 cask      "signal"
+cask      "discord"
+cask      "whatsapp"
