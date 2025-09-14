@@ -384,6 +384,9 @@ globalkeys = gears.table.join(
   awful.key({ modopt }, 'Escape', function() awful.util.spawn('/home/fist_it/.config/rofi/launch_powermenu.sh') end,
     { description = 'run desktop apps with rofi', group = 'launcher' }),
 
+  awful.key({ modcom }, "l", function() awful.spawn('/home/fist_it/.config/config_scripts/lock.sh') end,
+    { description = "lock", group = "media" }),
+
   -- Screenshots tool -- save to ~/screenshots AND copy to clipboard
   awful.key({ modcom, 'Shift' }, 's', function() awful.util.spawn('flameshot gui -c -p /home/fist_it/screenshots') end,
     { description = 'take screenshot', group = 'launcher' }),
