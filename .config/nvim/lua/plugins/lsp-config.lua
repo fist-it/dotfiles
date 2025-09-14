@@ -8,6 +8,7 @@ return {
   },
   {
     'mason-org/mason-lspconfig.nvim',
+    event = { "BufReadPre", "BufNewFile" },
     -- tag = 'v1.32.0',
     pin = true,
     lazy = true,
