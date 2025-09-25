@@ -112,6 +112,7 @@ alias la="ls -a"
 alias cl=" clear"
 alias tree="tree -a -I '.git'"
 alias ff="fastfetch"
+alias :wq="exit"
 
 if ! command -v matlab &> /dev/null; then
   alias matlab="/Applications/MATLAB_R2024b.app/bin/matlab"
