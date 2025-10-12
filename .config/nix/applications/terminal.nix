@@ -72,7 +72,6 @@
     ffmpeg
     ncdu
     tealdeer
-    nodejs
     fzf
     btop
     tmux
@@ -80,6 +79,7 @@
     spotify-player
     nmap
     stow
+    just
   ];
 }
 

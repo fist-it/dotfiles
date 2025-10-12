@@ -1,6 +1,21 @@
 { pkgs, config, ... }:
 
 {
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      sioyek = prev.sioyek.overrideAttrs (oldAttrs: {
+        postFixup = ''
+          wrapProgram $out/bin/sioyek \
+          --set QT_QPA_PLATFORM xcb \
+          --prefix LD_LIBRARY_PATH : "${
+            prev.lib.makeLibraryPath [ prev.pipewire ]
+          }"
+        '';
+      });
+    })
+  ];
+
   home.packages = with pkgs; [
     kitty
     firefox
@@ -14,9 +29,13 @@
     swayosd
     spotify
     nemo
-    sioyek
     rofi
     eww
+    krita
+    transmission_4-gtk
+    mpv
+    google-chrome
+    sioyek
   ];
 
   xdg.desktopEntries = {

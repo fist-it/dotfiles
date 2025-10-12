@@ -1,17 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./dev
-    ./applications
-  ];
+  imports = [ ./dev ./applications ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "fist-it";
   home.homeDirectory = "/home/fist-it";
   nixpkgs.config.allowUnfree = true;
-
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -31,6 +27,8 @@
     fastfetch
     spotify
     ripgrep
+    tree-sitter
+    nordic
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -63,10 +61,33 @@
   #
   #  /etc/profiles/per-user/fist-it/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    EDITOR = "nvim";
+
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.nordic;
+      name = "Nordic";
+    };
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
+    };
+    font = {
+      name = "Hack Nerd Font";
+      size = 11;
+    };
   };
 
+  qt.enable = true;
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.nordzy-cursor-theme;
+    name = "Nordzy-hyprcursors";
+    size = 28;
+  };
+
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

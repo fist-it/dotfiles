@@ -2,8 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    gcc
-    cmake
-    gnumake
+
+    jdk21
+    maven
+
   ];
 }
