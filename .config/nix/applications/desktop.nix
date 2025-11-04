@@ -22,6 +22,7 @@
     keepassxc
     hyprpaper
     hyprlock
+    swayidle
     tor-browser
     keymapp
     discord
@@ -36,6 +37,7 @@
     mpv
     google-chrome
     sioyek
+    anki
   ];
 
   xdg.desktopEntries = {
@@ -44,6 +46,14 @@
       exec = "/home/fist-it/.local/Balatro.v1.0.1N/run.sh";
       terminal = false;
     };
+
+    Firefox_private = {
+        name = "Firefox Private";
+        exec = "firefox --private-window %U";
+        terminal = false;
+        categories = [ "Network" "WebBrowser" ];
+        genericName = "Incognito Web Browser";
+      };
   };
 }
 

@@ -28,6 +28,7 @@
       zshconfig="$EDITOR $HOME/.zshrc";
       reload="source $HOME/.zshrc";
       myip="curl http://ipecho.net/plain; echo";
+      nix-shell="nix-shell --run zsh";
     };
 
     # {{{ initContent
@@ -70,6 +71,7 @@
 
   home.packages = with pkgs; [
     ffmpeg
+    imagemagick
     ncdu
     tealdeer
     fzf
@@ -80,6 +82,9 @@
     nmap
     stow
     just
+    unzip
+    p7zip
+    cursor-cli
   ];
 }
 
