@@ -85,6 +85,8 @@
     unzip
     p7zip
     cursor-cli
+    caligula
+    dysk
   ];
 }
 

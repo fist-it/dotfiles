@@ -38,6 +38,7 @@
     google-chrome
     sioyek
     anki
+    code-cursor
   ];
 
   xdg.desktopEntries = {
@@ -48,12 +49,12 @@
     };
 
     Firefox_private = {
-        name = "Firefox Private";
-        exec = "firefox --private-window %U";
-        terminal = false;
-        categories = [ "Network" "WebBrowser" ];
-        genericName = "Incognito Web Browser";
-      };
+      name = "Firefox Private";
+      exec = "firefox --private-window %U";
+      terminal = false;
+      categories = [ "Network" "WebBrowser" ];
+      genericName = "Incognito Web Browser";
+    };
   };
 }
 
