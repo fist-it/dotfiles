@@ -74,6 +74,7 @@ return {
 
       -- set Error/Warning/Info/Hint signs
       vim.diagnostic.config({
+        signs = false;
         -- {
         --   text = {
         --     [vim.diagnostic.severity.ERROR] = '✗',

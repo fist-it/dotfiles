@@ -40,4 +40,4 @@ vim.opt.showcmdloc = 'statusline'
 
 vim.g.rust_recommended_style = 0
 
-vim.opt.cmdheight=0
+vim.opt.cmdheight=1
