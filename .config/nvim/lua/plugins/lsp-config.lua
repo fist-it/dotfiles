@@ -74,19 +74,23 @@ return {
 
       -- set Error/Warning/Info/Hint signs
       vim.diagnostic.config({
-        signs = {
-          text = {
-            [vim.diagnostic.severity.ERROR] = '✗',
-            [vim.diagnostic.severity.WARN] = '⚠',
-            [vim.diagnostic.severity.INFO] = 'ℹ',
-            [vim.diagnostic.severity.HINT] = '➤',
-          },
-          linehl = {
-            [vim.diagnostic.severity.ERROR] = 'ErrorMsg'
-          },
-          numhl = {
-            [vim.diagnostic.severity.WARN] = 'WarningMsg',
-          },
+        -- {
+        --   text = {
+        --     [vim.diagnostic.severity.ERROR] = '✗',
+        --     [vim.diagnostic.severity.WARN] = '⚠',
+        --     [vim.diagnostic.severity.INFO] = 'ℹ',
+        --     [vim.diagnostic.severity.HINT] = '➤',
+        --   },
+        --   linehl = {
+        --     [vim.diagnostic.severity.ERROR] = 'ErrorMsg'
+        --   },
+        --   numhl = {
+        --     [vim.diagnostic.severity.WARN] = 'WarningMsg',
+        --   },
+        -- }
+        virtual_text = false,
+        virtual_lines = {
+          current_line = true,
         }
       })
 
