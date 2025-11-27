@@ -3,20 +3,20 @@ return {
   version = false,
   init = function()
     require('mini.ai').setup()
-    require('mini.animate').setup({
-      cursor = {
-        enable = false
-      },
-      resize = {
-        enable = false
-      },
-      open = {
-        enable = false
-      },
-      close = {
-        enable = false
-      },
-    })
+    -- require('mini.animate').setup({
+    --   cursor = {
+    --     enable = false
+    --   },
+    --   resize = {
+    --     enable = false
+    --   },
+    --   open = {
+    --     enable = false
+    --   },
+    --   close = {
+    --     enable = false
+    --   },
+    -- })
     require('mini.pairs').setup()
     require('mini.surround').setup({
         -- Add custom surroundings to be used on top of builtin ones. For more
